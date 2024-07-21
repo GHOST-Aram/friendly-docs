@@ -6,7 +6,7 @@ This endpoint allows you to create a new user.
 You do not need authorization to use this endpoint.
 
 ### Request
-Users can be created as either admins or regular users. To create a new user, provide the following user details in the request body:
+To create a new user, provide the following user details in the request body:
 
 ```typescript
     profilePicture?: File 
@@ -21,7 +21,6 @@ Users can be created as either admins or regular users. To create a new user, pr
 - The profile picture is optional but if provided, must be an image file
 - Password can be any string of length between 8 and 100 characters
 - The `userGroup` can only be a `host`, an `attendee` or a `superuser`. If not provided, the system will use the `attendee` group as default.
-    
 
 ### Response
 
