@@ -31,18 +31,12 @@ A success response from this endpoint has a status code of 200. The list of user
     password: string
     userGroup: string
     pictureUrl?: string
-    profilePicture: {
-        data: string 
-        name: string 
-        contentType: string 
-    }
 ```
 
-**Notes**
-- The `_id` is a unique 24 character hexadecimal string
-- The profile picture in the response is formated into a base64 data string that can be converted into a file using browser APIs. 
-- The picture profile name represents the original name of the file. 
-- The content type represent the files mimetype
+**Virtual properties**
+The following properties can be accessed from the returned documents as readonly
+- `id`: string
+- `isAdmin`: boolean
 
 
 ## Example

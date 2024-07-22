@@ -20,23 +20,22 @@ Provide it in the `Authorization` header as Bearer token, to authenticate the re
 A successful response sent from this endpoint has a status code of 200. The user details are contaied in the response body as a json payload. The json payload contains a user object with the following details:
 
 ```javascript
- _id: string
+    _id: string
     fullName: String
     email: string
     password: string
     userGroup: string
     pictureUrl?: string
-    profilePicture: {
-        data: string 
-        name: string 
-        contentType: string 
-    } | null
 ```
+**Virtual properties**
+The following properties can be accessed from the returned documents as readonly
+- `id`: string
+- `isAdmin`: boolean
 
 Example
 ```javascript
 (async() =>{
-    const response =  await fetch('http://localhost:8000/users/65e40da5c390b114451cebb5',{
+    const response =  await fetch('<BASE_URL>/users/65e40da5c390b114451cebb5',{
         method: 'GET',
         headers:{
             'Authorization': 'Bearer <Authorization token>'
