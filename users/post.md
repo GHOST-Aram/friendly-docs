@@ -9,7 +9,6 @@ You do not need authorization to use this endpoint.
 To create a new user, provide the following user details in the request body:
 
 ```typescript
-    profilePicture?: File 
     pictureUrl?: string
     fullName: string
     email: string
@@ -18,9 +17,9 @@ To create a new user, provide the following user details in the request body:
 ```
 
 **Notes:**
-- The profile picture is optional but if provided, must be an image file
 - Password can be any string of length between 8 and 100 characters
 - The `userGroup` can only be a `host`, an `attendee` or a `superuser`. If not provided, the system will use the `attendee` group as default.
+- Users can set profile pictures from file uploads but this will only be allowed in `PATCH` updates.
 
 ### Response
 
@@ -33,16 +32,20 @@ Example:
 (async() =>{
     const formData = new FormData()
 
-    formData.append('fullName', 'Curtis Jackson')
-    formData.append('email', 'Nyasia.Kreiger@gmail.com')
-    formData.append('password', 'password3')
-    formData.append('userGroup', 'host')
-    formData.append('profilePicture', '<variable holding a selected file>')
+    const data = {
+        fullName: 'Curtis Jackson'
+        email: 'Nyasia.Kreiger@gmail.com'
+        password: 'password3'
+        userGroup: 'host'
+    }
     
     
     const response = await fetch('<BASE_URL>/users', {
         method: 'POST',
-        body: formData
+        body: JSON.stringify(data),
+        headers:{
+            'Content-Type': 'application/json'
+        }
     })
 
     const body = await response.json()
