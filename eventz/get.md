@@ -20,6 +20,21 @@ Pagination constraints can be included in the url as shown in the following URL
 /events?page=2&&limit=21
 ```
 
+#### Example
+
+```javascript
+(asyn() =>{
+
+    const response = await fetch('<BASE_URL>/events?page=2&&limit=21', {
+        method: 'GET',
+    })
+
+    const body = await response.json()
+
+    console.log('events: ', body)
+})()
+ ```
+
 ### Response
 A success response from this endpoint has a status code of 200. The list of events is contained in the response body as a JSON payload. Each object in the events array contains the following event details:
 
@@ -49,21 +64,3 @@ A success response from this endpoint has a status code of 200. The list of even
     availableTickets: number
     ticketPrice: number
 ```
-
-## Example
-
-```javascript
-(asyn() =>{
-
-    const response = await fetch('<BASE_URL>/events', {
-        method: 'GET',
-        headers: {
-            'Authorization': 'Bearer<token>'
-        }
-    })
-
-    const body = await response.json()
-
-    console.log('events: ', body)
-})()
- ```
