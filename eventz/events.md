@@ -1,4 +1,4 @@
-# events 
+# Events 
 Welcome to events documentation. This document provides links to the documentations on all the CRUD operations on events.
  
 Each documentation linked below provides detailed information about the request, response, and any additional parameters necessary for interacting with the events endpoint.
