@@ -13,12 +13,12 @@ To create a new user, provide the following user details in the request body:
     fullName: string
     email: string
     password: string 
-    userGroup?: 'host' | 'attendee' | 'superuser'
+    userGroup?: 'organizer' | 'attendee' | 'superuser'
 ```
 
 **Notes:**
 - Password can be any string of length between 8 and 100 characters
-- The `userGroup` can only be a `host`, an `attendee` or a `superuser`. If not provided, the system will use the `attendee` group as default.
+- The `userGroup` can only be a `organizer`, an `attendee` or a `superuser`. If not provided, the system will use the `attendee` group as default.
 - Users can set profile pictures from file uploads but this will only be allowed in `PATCH` updates.
 
 ### Response
@@ -36,7 +36,7 @@ Example:
         fullName: 'Curtis Jackson'
         email: 'Nyasia.Kreiger@gmail.com'
         password: 'password3'
-        userGroup: 'host'
+        userGroup: 'organizer'
     }
     
     
