@@ -7,15 +7,15 @@ Please select the operation you are interested in to proceed with the documentat
 
 ## POST User
 Create a new user.
-- [See Documentation](./post.md)
+- [See Documentation](./docs/post.md)
 
 ## GET Multiple Users
 Retrieve paginated lists of users in the system.
-- [Visit the documentation](./get.md)
+- [Visit the documentation](./docs/get.md)
 
 ## GET One User
 Retrieve information about a specific user by id.
-- [Visit the documentation](./[id]/get.md)
+- [Visit the documentation](./docs/[id]/get.md)
 
 
 ## PUT User

@@ -7,19 +7,19 @@ Please select the operation you are interested in to proceed with the documentat
 
 ## POST event
 Create a new event.
-- [See Documentation](./post.md)
+- [See Documentation](./docs/post.md)
 
 ## GET Multiple events
 Retrieve paginated lists of events in the system.
-- [Visit the documentation](./get.md)
+- [Visit the documentation](./docs/get.md)
 
 ## GET One event
 Retrieve information about a specific event by id.
-- [Visit the documentation](./[id]/get.md)
+- [Visit the documentation](./docs/[id]/get.md)
 
 ## GET Multiple events by `organizerId`
 Retrieve information about a events listed by a specific organizer.
-- [Visit the documentation](./organizers/[organizerId]/get.md)
+- [Visit the documentation](./docs/organizers/[organizerId]/get.md)
 
 ## PUT event
 Update event information.
