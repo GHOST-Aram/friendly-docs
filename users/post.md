@@ -30,7 +30,6 @@ Example:
 
 ```javascript
 (async() =>{
-    const formData = new FormData()
 
     const data = {
         fullName: 'Curtis Jackson'

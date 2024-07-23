@@ -1,7 +1,7 @@
-# Users Endpoint
-Welcome to the documentation of the Users Endpoint. This document provideds links to the documentations on all the CRUD operations on Users.
+# Users 
+Welcome to users documentation. This document provides links to the documentations of all the CRUD operations on users.
  
-Each documentation linked below provides detailed information about the request structure, response format, and any additional parameters necessary for interacting with the Users endpoint.
+Each documentation linked below provides detailed information about request, response, and any additional parameters necessary for interacting with the Users endpoint.
 
 Please select the operation you are interested in to proceed with the documentation
 
