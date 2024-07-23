@@ -19,7 +19,7 @@ Retrieve information about a specific event by id.
 
 ## GET Multiple events by `organizerId`
 Retrieve information about a events listed by a specific organizer.
-- [Visit the documentation](./[orgnizerId]/get.md)
+- [Visit the documentation](./organizers/[organizerId]/get.md)
 
 ## PUT event
 Update event information.
