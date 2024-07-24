@@ -19,7 +19,7 @@ To create a new user, provide the following user details in the request body:
 **Notes:**
 - The `userGroup` can only be a `organizer`, an `attendee` or a `superuser`. If not provided, the system will use the `attendee` group as default. 
 - The `superuser` group is reserved for system admins only.
-- The profile picture is optional but if provided, must be an image file with the extension * .jpg, .jpeg, .png , .avif, and .jfif*
+- The profile picture is optional but if provided, must be an image file with the extension *.jpg, .jpeg, .png , .avif, or .jfif*
 - Password can be any string of length between 8 and 100 characters
 
 
