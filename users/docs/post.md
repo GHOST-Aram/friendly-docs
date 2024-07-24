@@ -17,16 +17,43 @@ To create a new user, provide the following user details in the request body:
 ```
 
 **Notes:**
+- The `userGroup` can only be a `organizer`, an `attendee` or a `superuser`. If not provided, the system will use the `attendee` group as default. 
+- The `superuser` group is reserved for system admins only.
+- The profile picture is optional but if provided, must be an image file with the extension * .jpg, .jpeg, .png , .avif, and .jfif*
 - Password can be any string of length between 8 and 100 characters
-- The `userGroup` can only be a `organizer`, an `attendee` or a `superuser`. If not provided, the system will use the `attendee` group as default.
-- Users can set profile pictures from file uploads but this will only be allowed in `PATCH` updates.
+
 
 ### Response
 
 A successful response from this endpoint has the status code of `201`. The response body contains created user document. The URL of the created item is in the `Location` header of the response object in the format `/users/<user_id`>. You can rely on this URL to view user profile after creating a new user.
 
 
-Example:
+### Examples:
+
+1. With Profile Picture:
+```javascript
+    (async() =>{
+        const formData = new FormData()
+
+        formData.append('fullName', 'Curtis Jackson')
+        formData.append('email', 'Nyasia.Kreiger@gmail.com')
+        formData.append('password', 'password3')
+        formData.append('userGroup', 'host')
+        formData.append('profilePicture', '<variable holding a selected file>')
+        
+        
+        const response = await fetch('<BASE_URL>/users', {
+            method: 'POST',
+            body: formData
+        })
+
+        const body = await response.json()
+
+        console.log('User: ', body)
+    })()
+```
+
+2. Without Profile picture:
 
 ```javascript
 (async() =>{
