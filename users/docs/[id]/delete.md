@@ -13,7 +13,7 @@ To delete the details of a user, provide the id of the user as a url parameter. 
 Provide the token in the `Authorization` header as Bearer. 
 
 ### Response
-A valid response of a request to this endpoint has a status code 200. The response body contains the an object with a text message and the id of the deleted user.
+A valid response of a request to this endpoint has a status code 200. If the target of deletion is not found, a response of status code `404` is received. The response body contains the  the id of the deleted user.
 
 **Example:**
 
