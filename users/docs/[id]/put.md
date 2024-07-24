@@ -27,7 +27,7 @@ To update information for a specific user, provide the following user details in
 **Notes:**
 - The `userGroup` can only be an `organizer`, an `attendee` or a `superuser`. If not provided, the system will use the `attendee` group as default.
 - The `superuser` group is reserved for system admins only.
-- The profile picture is optional but if provided, must be an image file with the extension * .jpg, .jpeg, .png , .avif, and .jfif*
+- The profile picture is optional but if provided, must be an image file with the extension *.jpg, .jpeg, .png , .avif, and .jfif*
 - Password can be any string of length between 8 and 100 characters
 
 ### Response
@@ -53,7 +53,10 @@ The URL to the updated user documents is available in the `Location` header of t
     
     const response = await fetch('<BASE_URL>/users', {
         method: 'PUT',
-        body: formData
+        body: formData,
+        headers: {
+            'Authorization': 'Bearer <authToken>'
+        }
     })
 
     const body = await response.json()
@@ -79,7 +82,8 @@ The URL to the updated user documents is available in the `Location` header of t
         method: 'PUT',
         body: JSON.stringify(data),
         headers:{
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer <authToken>'
         }
     })
 
