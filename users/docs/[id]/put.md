@@ -36,7 +36,7 @@ A successfull PUT request receives a response with a status code of 200. If the 
 
 The URL to the updated user documents is available in the `Location` header of the response object. The response body contains a json payload containing the updated user details.
 
-### Example:
+**Example:**
 
 1. With Profile picture
 

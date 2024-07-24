@@ -1,48 +1,94 @@
-## PATCH `users/:id`
+## PUT `users/:id`
 
-This endpoint allows you to apply partial updates on the details of a specific user.
+This endpoint allows you to apply partial or full updates on the details of a specific user.
 
-### Authorization
+### Authenticated
 
-Only authorised users can modify their information. Visit the [authorization documentation](../../authentication/auth.md) to learn how to acquire authentication token.
+Only authenticated users can update their information. Visit the [authorization documentation](../../../authentication/authentication.md) to learn how to acquire authentication token.
 
 
 ### Request
 
-Provide the id of the user as a url parameter. The id in the url parameter must be a 24 character hezadecimal string. Invalid ID will trigger error response. The id in the parameter has to be the same as the id of the user sending this request, this is because users can only update their own details and not the details of other users. Provide the authorization token as Bearer in the `Authorization` header of the request.
+Provide the id of the user as a url parameter. The id in the parameter has to be the same as the id of the user sending this request, this is because users can only update their own details and not the details of other users.
 
-The request body can contain some or all of the following details about the user:
-    - `first_name`: (string) The first name of the user.
-    - `last_name`: (string) The last name of the user.
-    - `email`: (string) The email address of the user.
-    - `password`: (string) The password of the user.
-    - `isAdmin`: (boolean) Indicates if the user is an admin.
+Provide the authorization token as Bearer in the `Authorization` header of the request.
+
+To update information for a specific user, provide the following user details in the request body:
+
+```typescript
+    profilePicture?: File 
+    pictureUrl?: string
+    fullName: string
+    email: string
+    password: string 
+    userGroup?: 'organizer' | 'attendee' | 'superuser'
+```
+
+**Notes:**
+- The `userGroup` can only be an `organizer`, an `attendee` or a `superuser`. If not provided, the system will use the `attendee` group as default.
+- The `superuser` group is reserved for system admins only.
+- The profile picture is optional but if provided, must be an image file with the extension *.jpg, .jpeg, .png , .avif, and .jfif*
+- Password can be any string of length between 8 and 100 characters
 
 ### Response
 
-A successfull patch request receives a response with a status code of 200. The url of the updated user is available in the `Location` header of the response. The response body contains a json palyload with a text `message` and an object containing the modified user details.
+A successfull PATCH request receives a response with a status code of 200. If the document to be updated does not exist, a response with status code of 404 is sent. 
 
-Example:
+The URL to the updated user documents is available in the `Location` header of the response object. The response body contains a json payload containing the updated user details.
+
+### Example:
+
+1. With Profile picture
 
 ```javascript
 (async() =>{
-    const body = JSON.stringify({
-        first_name: "Darlene",
-        last_name: "Hills",
-        email: "Rafaela_Bergnaum5@yahoo.com",
-        isAdmin: "true"
-    })
+    const formData = new FormData()
 
-    const response = await fetch( 'http://localhost:8000/users/65e1d64ea0b2e375e0b0a676',{
+    formData.append('fullName', 'Curtis Jackson')
+    formData.append('email', 'Nyasia.Kreiger@gmail.com')
+    formData.append('password', 'password3')
+    formData.append('userGroup', 'host')
+    formData.append('profilePicture', '<variable holding a selected file>')
+    
+    
+    const response = await fetch('<BASE_URL>/users', {
         method: 'PATCH',
-        body,
-        headers:{
-            'Authorization': 'Bearer <toke>'
+        body: formData,
+        headers: {
+            'Authorization': 'Bearer <authToken>'
         }
     })
 
     const body = await response.json()
-    console.log('Message :', body.message)
-    console.log('User: ', body.item)
-})
+
+    console.log('User: ', body)
+})()
+```
+
+2. Without Profile picture:
+
+```javascript
+(async() =>{
+
+    const data = {
+        fullName: 'Curtis Jackson'
+        email: 'Nyasia.Kreiger@gmail.com'
+        password: 'password3'
+        userGroup: 'organizer'
+    }
+    
+    
+    const response = await fetch('<BASE_URL>/users', {
+        method: 'PATCH',
+        body: JSON.stringify(data),
+        headers:{
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer <authToken>'
+        }
+    })
+
+    const body = await response.json()
+
+    console.log('User: ', body)
+})()
 ```
