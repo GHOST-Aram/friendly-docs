@@ -1,4 +1,4 @@
-# Documentation for friendly events Backend APIs
+# Documentation for Friendly Events Backend APIs
     
 The documentation contains the following
 
