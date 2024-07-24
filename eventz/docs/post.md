@@ -3,7 +3,7 @@
 This endpoint allows event organizers to create a new event.
 
 ### Authorization
-Only authenticated event organizers can access create events. Event organizers are users of the `organizer` user group. Visit the [authentication docs](../authentication/authentication.md) to acquire authentication token. Provide the token in the request `Authorization` header as `Bearer`.
+Only authenticated event organizers can create events. Event organizers are users of the `organizer` user group. Visit the [authentication docs](../authentication/authentication.md) to acquire authentication token. Provide the token in the request `Authorization` header as `Bearer`.
 
 ### Request
 To create a new event, provide the following event details in the request body:

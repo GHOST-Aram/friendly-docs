@@ -32,7 +32,7 @@ To update information for a specific user, provide the following user details in
 
 ### Response
 
-A successfull PUT request receives a response with a status code of 200. If the document to be updated does not exist, a new document is created and a response with status code of 201 is sent. 
+A successfull PUT request receives a response with a status code of `200`. If the document to be updated does not exist, a new document is created and a response with status code of `201` is sent. 
 
 The URL to the updated user documents is available in the `Location` header of the response object. The response body contains a json payload containing the updated user details.
 
