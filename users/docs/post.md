@@ -13,12 +13,17 @@ To create a new user, provide the following user details in the request body:
     fullName: string
     email: string
     password: string 
-    userGroup?: 'organizer' | 'attendee' | 'superuser'
+    userGroup?: 'host'|'organizer' | 'attendee' | 'superuser'
 ```
 
 **Notes:**
-- The `userGroup` can only be a `organizer`, an `attendee` or a `superuser`. If not provided, the system will use the `attendee` group as default. 
+- The `userGroup` can only be a `host`, `organizer`, an `attendee` or a `superuser`. If not provided, the system will use the `attendee` group as default. 
+
+- The users of the `host` group are the owners/managers/landlords of event venues.
+- The users of the group `organizer` are event organizers.
+- The users of the group `attendee` are prospective attendees of an event.
 - The `superuser` group is reserved for system admins only.
+
 - The profile picture is optional but if provided, must be an image file with the extension *.jpg, .jpeg, .png , .avif, or .jfif*
 - Password can be any string of length between 8 and 100 characters
 
