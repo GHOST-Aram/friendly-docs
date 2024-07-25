@@ -23,15 +23,16 @@ Retrieve information about a events listed by a specific organizer.
 
 ## PUT event
 Update event information.
-- *Coming soon*
+- [Visit the documentation](./docs/[id]/put.md)
 
 ## PATCH event
 Apply partial modifications on a event by id.
-- *Coming Soon*
+- [Visit the documentation](./docs/[id]/patch.md)
 
 ## DELETE event
 Remove a event by ID.
-- *Coming Soon*
+- [Visit the documentation](./docs/[id]/delete.md)
+
 
 
 
