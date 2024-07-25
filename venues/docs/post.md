@@ -1,9 +1,9 @@
 ## POST `/venues`
 
-This endpoint allows venue organizers to create a new venue.
+This endpoint allows venue managers/owners/landlords to create a new venue.
 
 ### Authorization
-Only authenticated venue organizers can create venues. venue organizers are users of the `organizer` user group. Visit the [authentication docs](../authentication/authentication.md) to acquire authentication token. Provide the token in the request `Authorization` header as `Bearer`.
+Only authenticated venue managers/owners/landlords can create venues. Venue managers/owners/landlords are users of the `host` user group. Visit the [authentication docs](../authentication/authentication.md) to acquire authentication token. Provide the token in the request `Authorization` header as `Bearer`.
 
 ### Request
 To create a new venue, provide the following venue details in the request body:
