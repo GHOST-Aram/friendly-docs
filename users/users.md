@@ -20,15 +20,15 @@ Retrieve information about a specific user by id.
 
 ## PUT User
 Update user information.
-- *Coming soon*
+- [Visit the documentation](./docs/[id]/put.md)
 
 ## PATCH User
 Apply partial modifications on a user by id.
-- *Coming Soon*
+- [Visit the documentation](./docs/[id]/patch.md)
 
 ## DELETE User
 Remove a user by ID.
-- *Coming Soon*
+- [Visit the documentation](./docs/[id]/delete.md)
 
 
 
