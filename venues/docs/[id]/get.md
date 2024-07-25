@@ -31,6 +31,7 @@ A successful response sent from this endpoint has a status code of 200. The venu
 
 ```javascript
     {
+    _id: string
     type: string
     name: string
     capacity: number
