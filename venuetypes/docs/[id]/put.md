@@ -24,7 +24,7 @@ The description should be a string of not less than 100 characters and not more 
 
 ### Response
 
-A successful response from this endpoint has the status code of `200`. If the document to be updated does not exist, a new document is created and a response with status code of `201` is sent. The response body contains updated venue type document. The URL of the created item is in the `Location` header of the response object in the format `/venue-types/<venueType._id`>.
+A successful response from this endpoint has the status code of `200`. If the document to be updated does not exist, a new document is created and a response with status code of `201` is sent. The response body contains updated venue type document. The URL of the updated or created item is in the `Location` header of the response object in the format `/venue-types/<venueType._id`>.
 
 
 **Example:**
