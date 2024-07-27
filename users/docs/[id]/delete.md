@@ -33,3 +33,6 @@ A valid response of a request to this endpoint has a status code 200. If the tar
     console.log('Deleted id: ', body)
 })()
 ```
+```json
+    "669e526fa9ed3824e6db2db9"
+```

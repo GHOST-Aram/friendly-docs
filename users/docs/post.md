@@ -84,3 +84,14 @@ A successful response from this endpoint has the status code of `201`. The respo
     console.log('User: ', body)
 })()
 ```
+
+```json
+{
+    "_id": "669e526fa9ed3824e6db2db9",
+    "fullName": "Darlene Hills",
+    "userGroup": "superuser",
+    "email": "RafaelBergnaum@yahoo.com",
+    "password": "$2b$10$NkE10T4T8zCVvIawiFHkb.MRV19Nstb9do.aD58pGAaq.um1aPa4i",
+    "__v": 0
+}
+```

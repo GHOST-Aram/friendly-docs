@@ -56,3 +56,14 @@ The following properties can be accessed from the returned documents as readonly
     console.log('Users: ', body)
 })()
  ```
+
+
+```json
+{
+    "_id": "669e4b8f24ab69ffdd220b60",
+    "fullName": "Darlene Hills",
+    "userGroup": "superuser",
+    "email": "RafaelBergnaum5@yahoo.com",
+    "__v": 0
+}
+```
