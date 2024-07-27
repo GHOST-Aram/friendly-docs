@@ -44,7 +44,7 @@ A successfull response from this endpoint has a status code of `200`. The list o
     createdBy?: ObjectId
     graphic?: {
         name: string,
-        data: Buffer
+        data: string
         contentType: string
     }
 ```
