@@ -23,15 +23,16 @@ Retrieve information about a venues listed by a specific host.
 
 ## PUT venue
 Update venue information.
-- *Coming soon*
+- [Visit the documentation](./docs/[id]/put.md)
 
 ## PATCH venue
 Apply partial modifications on a venue by id.
-- *Coming Soon*
+- - [Visit the documentation](./docs/[id]/patch.md)
 
 ## DELETE venue
 Remove a venue by ID.
-- *Coming Soon*
+- [Visit the documentation](./docs/[id]/delete.md)
+
 
 
 
