@@ -1,9 +1,13 @@
 ## PUT `/event-categories`
 
-This endpoint allows event organizers and system admins to update a new categories under which events can be grouped. Event organizers and system admins are users of the `organizer` and `superuser` groups respectively.
+This endpoint allows event organizers and system admins to update event categories information. Event organizers and system admins are users of the `organizer` and `superuser` groups respectively.
 
 ### Authorization
-Only authenticated event organizers or system admins can update an Event Category. Visit the [authentication docs](../authentication/authentication.md) to acquire authentication token. Provide the token in the request `Authorization` header as `Bearer`.
+Only authenticated event organizers or system admins can update an Event Category. 
+
+Admins or hosts can only update documents they created. If an admin tries to update a document created by another admin or another venue host, the server will deny the request and respond with status code `403` (Fobbiden). Same goes for venue hosts.
+
+Visit the [authentication docs](../authentication/authentication.md) to acquire authentication token. Provide the token in the request `Authorization` header as `Bearer`.
 
 ### Request
 To update a new event, provide the following event details in the request body:
