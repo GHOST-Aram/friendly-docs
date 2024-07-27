@@ -3,7 +3,7 @@
 This endpoint allows event organizers and system admins to create a new categories under which events can be grouped. Event organizers and system admins are users of the `organizer` and `superuser` groups respectively.
 
 ### Authorization
-Only authenticated event organizers or system admins can create events. Visit the [authentication docs](../authentication/authentication.md) to acquire authentication token. Provide the token in the request `Authorization` header as `Bearer`.
+Only authenticated event organizers or system admins can create an event category. Visit the [authentication docs](../authentication/authentication.md) to acquire authentication token. Provide the token in the request `Authorization` header as `Bearer`.
 
 ### Request
 To create a new event, provide the following event details in the request body:
