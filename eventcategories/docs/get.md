@@ -39,6 +39,7 @@ Pagination constraints can be included in the url as shown in the following URL
 A successfull response from this endpoint has a status code of `200`. The list of Event Categories is contained in the response body as a JSON payload. Each object in the Event Categories array contains the following event details:
 
 ```javascript
+    _id: string
     name: string
     description: string
     createdBy?: ObjectId
