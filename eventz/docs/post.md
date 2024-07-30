@@ -1,6 +1,6 @@
 ## POST `/events`
 
-This endpoint allows event organizers to create a new event.
+This endpoint allows event organizers to create a new event document.
 
 ### Authorization
 Only authenticated event organizers can create events. Event organizers are users of the `organizer` user group. Visit the [authentication docs](../authentication/authentication.md) to acquire authentication token. Provide the token in the request `Authorization` header as `Bearer`.
@@ -38,12 +38,7 @@ To create a new event, provide the following event details in the request body:
 - The accepted value of `time.zone` string is in the format *GMT+hours:minutes*. For example *GMT+03:00*.
 - The accepted value of `duration` string is in the format *Number days or hours or minutes*. For example *3 days or 3 hours or 45 minutes*.
 
-### Response
-
-A successful response from this endpoint has the status code of `201`. The response body contains created event document. The URL of the created item is in the `Location` header of the response object in the format `/events/<event._id`>.
-
-
-Example:
+**Example:**
 
   ```javascript
     const data = {
@@ -109,3 +104,7 @@ Example:
     console.log('event: ', body)
 })()
 ```
+
+### Response
+
+A successful response from this endpoint has the status code of `201`. The response body contains the created event document. The URL of the created item is in the `Location` header of the response object in the format `/events/<event._id`>.
