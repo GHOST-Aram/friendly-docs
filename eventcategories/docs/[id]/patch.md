@@ -24,11 +24,6 @@ To update a new event, provide the following event details in the request body:
 - The event graphic is optional but if provided, must be an image file with the extension *.jpg, .jpeg, .png , .avif, or .jfif*
 - The description can be any string between 100 and 1000 cahracters in length.
 
-### Response
-
-A successful response from this endpoint has the status code of `200`. The response body contains modified document. The URL to the modified item is in the `Location` header of the response object in the format `/event-categories/<eventCategory._id`>. If the document to be modified does not exist, a response with status code of `404` is sent.
-
-
 **Example:**
 
   ```javascript
@@ -84,3 +79,7 @@ A successful response from this endpoint has the status code of `200`. The respo
     console.log('Event Category Data: ', body)
 })()
 ```
+
+### Response
+
+A successful response from this endpoint has the status code of `200`. The response body contains the modified document. The URL to the modified item is in the `Location` header of the response object in the format `/event-categories/<eventCategory._id`>. If the document to be modified is not found, a response with status code of `404` is received.
