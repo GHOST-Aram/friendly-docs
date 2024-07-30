@@ -1,9 +1,11 @@
 ## PUT `/events`
 
-This endpoint allows event organizers to create a new event.
+This endpoint allows event organizers to create a new event. Event organizers are users of the `organizer` user group.
 
 ### Authorization
-Only authenticated event organizers can update events. Event organizers are users of the `organizer` user group. Visit the [authentication docs](../authentication/authentication.md) to acquire authentication token. Provide the token in the request `Authorization` header as `Bearer`.
+Only authenticated event organizers can update events. Event organizers can only update the documents they own (the documents they created). If one event organizer tries to update an event document created by another event organizer, a `Forbidden` with response status `403` will be received. 
+
+Visit the [authentication docs](../authentication/authentication.md) to acquire authentication token. Provide the token in the request `Authorization` header as `Bearer`.
 
 ### Request
 To update an event via PUT method, provide the following event details in the request:
@@ -38,12 +40,8 @@ To update an event via PUT method, provide the following event details in the re
 - The accepted value of `time.zone` string is in the format *GMT+hours:minutes*. For example *GMT+03:00*.
 - The accepted value of `duration` string is in the format *Number days or hours or minutes*. For example *3 days or 3 hours or 45 minutes*.
 
-### Response
 
-A successful response from this endpoint has the status code of `200`. If the document to be updated does not exist, a new document is created and a response with status code of `201` is sent. The response body contains updated event document. The URL of the created item is in the `Location` header of the response object in the format `/events/<event._id`>.
-
-
-Example:
+**Example:**
 
   ```javascript
     const data = {
@@ -109,3 +107,7 @@ Example:
     console.log('event: ', body)
 })()
 ```
+
+### Response
+
+A successful response from this endpoint has the status code of `200`. If the document to be updated does not exist, a new document is created and a response with status code of `201` is sent. The response body contains updated event document. The URL of the created item is in the `Location` header of the response object in the format `/events/<event._id`>.
