@@ -1,8 +1,6 @@
 ## GET `/events`
 
-This endpoint allows the client to retrieve a list of events. 
-
-The response returns a paginated list by default. The default pagination limit is 10. You can change this value using query parameters.
+This endpoint allows the client to retrieve a list of events. The response returns a paginated list by default. The default pagination limit is 10. You can change this value using query parameters.
 
 
 ## Authorization
@@ -36,11 +34,12 @@ Pagination constraints can be included in the url as shown in the following URL
  ```
 
 ### Response
-A success response from this endpoint has a status code of 200. The list of events is contained in the response body as a JSON payload. Each object in the events array contains the following event details:
+A success response from this endpoint has a status code of `200`. The list of events is contained in the response body as a JSON payload. Each object in the events array contains the following event details:
 
 ```javascript
     _id: string
-   category: string
+    category: string
+    createdBy: string
     venue: string
     title: string
     organizer: string,
