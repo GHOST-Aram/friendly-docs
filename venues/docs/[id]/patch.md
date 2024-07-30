@@ -8,11 +8,17 @@ Only authenticated venue managers/owners/landlords can modify venues. venue mana
 ### Request
 To modify an venue information via PATCH method, provide the following venue details in the request:
 
-```typescript
 
+```typescript
+   {
     type: string
     name: string
     capacity: number
+    bookingTerms: {
+        fee: number
+        timeSpan: string
+    }
+    availabilityStatus: string
     address: {
         cityOrTown: string
         street: string
@@ -33,8 +39,12 @@ To modify an venue information via PATCH method, provide the following venue det
         latitude: number
         longitude: number
     }
-
+}
 ```
+
+**Notes**
+- Booking timespan can only be `hour`, `day`, `week` or `month`.
+- Availability status can only be `available`, `booked`, or `inactive`.
 
 ### Response
 
@@ -44,10 +54,15 @@ A successful response from this endpoint has the status code of `200`. If the do
 Example:
 
   ```javascript
-    const data = {
+   const data = {
         type: "5 star Hotel",
         name: "Paradise Eden",
         capacity: 20000,
+        bookingTerms: {
+            fee: 5000,
+            timeSpan: 'day',
+        },
+        availabilityStatus: 'available',
         address: {
             cityOrTown: 'Nairobi',
             street: '34 North',

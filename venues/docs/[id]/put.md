@@ -8,11 +8,17 @@ Only authenticated venue managers/owners/landlords can update venues. Venue mana
 ### Request
 To update an venue via PUT method, provide the following venue details in the request:
 
-```typescript
 
+```typescript
+   {
     type: string
     name: string
     capacity: number
+    bookingTerms: {
+        fee: number
+        timeSpan: string
+    }
+    availabilityStatus: string
     address: {
         cityOrTown: string
         street: string
@@ -33,8 +39,12 @@ To update an venue via PUT method, provide the following venue details in the re
         latitude: number
         longitude: number
     }
-
+}
 ```
+
+**Notes**
+- Booking timespan can only be `hour`, `day`, `week` or `month`.
+- Availability status can only be `available`, `booked`, or `inactive`.
 
 
 ### Response
@@ -49,6 +59,11 @@ Example:
         type: "5 star Hotel",
         name: "Paradise Eden",
         capacity: 20000,
+        bookingTerms: {
+            fee: 5000,
+            timeSpan: 'day',
+        },
+        availabilityStatus: 'available',
         address: {
             cityOrTown: 'Nairobi',
             street: '34 North',
