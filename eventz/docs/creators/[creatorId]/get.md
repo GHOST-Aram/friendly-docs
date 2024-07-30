@@ -1,9 +1,8 @@
-## GET `/events/organizers/:organizerId`
+## GET `/events/creators/:creatorId`
 
 This endpoint allows the client to retrieve a list of events created by a specific event organizer. 
 
 The response returns a paginated list by default. The default pagination limit is 10. You can change this value using query parameters.
-
 
 ## Authorization
 All users, including anonymous users, can view event listed by specific organizer. Authentication is therefore not required for this endpoint.
@@ -17,7 +16,7 @@ You can send a request to view list of events with the desired pagination constr
 Pagination constraints can be included in the url as shown in the following URL
 
 ```t
-/events/organizers/<organizerId>?page=2&&limit=21
+/events/creators/<creatorId>?page=2&&limit=21
 ```
 
 #### Example
@@ -25,7 +24,7 @@ Pagination constraints can be included in the url as shown in the following URL
 ```javascript
 (asyn() =>{
 
-    const response = await fetch('<BASE_URL>/events/organizers/<organizerId>?page=2&&limit=21', {
+    const response = await fetch('<BASE_URL>/events/creators/<creatorId>?page=2&&limit=21', {
         method: 'GET',
     })
 
@@ -36,11 +35,12 @@ Pagination constraints can be included in the url as shown in the following URL
  ```
 
 ### Response
-A success response from this endpoint has a status code of 200. The list of events is contained in the response body as a JSON payload. Each object in the events array contains the following event details:
+A success response from this endpoint has a status code of `200`. The list of events is contained in the response body as a JSON payload. Each object in the events array contains the following event details:
 
 ```javascript
     _id: string
-   category: string
+    category: string
+    createdBy: string
     venue: string
     title: string
     organizer: string
