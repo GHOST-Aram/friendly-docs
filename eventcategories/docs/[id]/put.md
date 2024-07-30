@@ -5,12 +5,12 @@ This endpoint allows event organizers and system admins to update event categori
 ### Authorization
 Only authenticated event organizers or system admins can update an Event Category. 
 
-Admins or hosts can only update documents they created. If an admin tries to update a document created by another admin or another venue host, the server will deny the request and respond with status code `403` (Fobbiden). Same goes for venue hosts.
+Admins or event organizers can only update documents they created. If an admin tries to update a document created by another admin or another event organizer, the server will deny the request and respond with status code `403` (Fobbiden). Same goes for event organizers.
 
 Visit the [authentication docs](../authentication/authentication.md) to acquire authentication token. Provide the token in the request `Authorization` header as `Bearer`.
 
 ### Request
-To update a new event, provide the following event details in the request body:
+To update a new event category, provide the following event details in the request body:
 
 ```typescript
     name: string
@@ -22,11 +22,6 @@ To update a new event, provide the following event details in the request body:
 **Notes**
 - The event graphic is optional but if provided, must be an image file with the extension *.jpg, .jpeg, .png , .avif, or .jfif*
 - The description can be any string between 100 and 1000 cahracters in length.
-
-### Response
-
-A successful response from this endpoint has the status code of `200`. If the document to be updated does not exist, a new document is updated and a response with status code of `201` is sent. The response body contains updated event document. The URL of the updated item is in the `Location` header of the response object in the format `/event-categories/<eventCategory._id`>.
-
 
 **Example:**
 
@@ -83,3 +78,7 @@ A successful response from this endpoint has the status code of `200`. If the do
     console.log('Event Category Data: ', body)
 })()
 ```
+
+### Response
+
+A successful response from this endpoint has the status code of `200`. If the document to be updated does not exist, a new document is updated and a response with status code of `201` is sent. The response body contains updated/created event category document. The URL of the updated item is in the `Location` header of the response object in the format `/event-categories/<eventCategory._id`>.
