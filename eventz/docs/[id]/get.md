@@ -27,11 +27,12 @@ To get the details of a event with a specific id, provide the id as a url parame
 ```
 
 ### Response
-A successful response sent from this endpoint has a status code of 200. The event details are contaied in the response body as a json payload. The json payload contains a event object with the following details:
+A successful response sent from this endpoint has a status code of `200`. The event details are contaied in the response body as a JSON payload. The JSON payload contains a event object with the following details:
 
 ```javascript
     _id: string
-   category: string
+    category: string
+    createdBy: string
     venue: string
     title: string
     organizer: string,
