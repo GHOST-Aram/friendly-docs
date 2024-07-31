@@ -113,7 +113,33 @@ Provide the token in the request `Authorization` header as `Bearer`.
 A successful response from this endpoint has the status code of `200`. The URL of the created item is in the `Location` header of the response object in the format `/events/<event._id`>. The response body contains the modified event document as a JSON payload. The following is an example of the JSON payload contained in the response body:
 
 ```json
-
+    {
+        "category": "Music",
+        "venue": "Madison Square Garden",
+        "title": "Rock Concert",
+        "createdBy": "66aa441b6e3b90141006547c",
+        "graphic": {
+            "name": "1722444814279_20240318_165856.jpg",
+            "data": "/9j/4dbgRXhpZgAASUkq...",
+            "contentType": "image/jpeg"
+        },
+        "city": "Nairobi",
+        "date": "8 August 2024",
+        "time": {
+            "start": "01:00 PM",
+            "end": "09:00 PM",
+            "zone": "GMT+03:00"
+        },
+        "duration": "8 hours",
+        "ageLimit": {
+            "min": 18,
+            "max": 60
+        },
+        "availableTickets": 5000,
+        "ticketPrice": 5900,
+        "_id": "66aa6c0e1001f0abc83679d3",
+        "__v": 0
+    }
 ```
 
 If the document to be updated does not exist, a response with status code of `404` is sent.
