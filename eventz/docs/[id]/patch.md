@@ -1,11 +1,11 @@
 ## PATCH `/events`
 
-This endpoint allows event organizers to create a new event. Event organizers are users of the `organizer` user group.
+This endpoint allows event organizers to modify the details of an event. Event organizers are users of the `organizer` user group.
 
 ### Authorization
-Only authenticated event organizers can modify events. Event organizers can only modify the documents they own (the documents they created). If one event organizer tries to modify an event document created by another event organizer, a `Forbidden` with response status `403` will be received.
+Only authenticated event organizers can modify events. Event organizers can only modify the event documents they own (the documents they created). If one event organizer tries to modify an event document created by another event organizer, a `Forbidden` response with status `403` will be received.
 
-Visit the [authentication docs](../authentication/authentication.md) to acquire authentication token. Provide the token in the request `Authorization` header as `Bearer`.
+Visit the [authentication docs](../authentication/authentication.md) to acquire authentication token.
 
 ### Request
 To modify an event information via PATCH method, provide the following event details in the request:
@@ -31,6 +31,7 @@ To modify an event information via PATCH method, provide the following event det
     ticketPrice: number
 ```
 
+Provide the token in the request `Authorization` header as `Bearer`.
 
 **Notes**
 - The event graphic is optional but if provided, must be an image file with the extension *.jpg, .jpeg, .png , .avif, or .jfif*
@@ -109,6 +110,12 @@ To modify an event information via PATCH method, provide the following event det
 
 ### Response
 
-A successful response from this endpoint has the status code of `200`. If the document to be updated does not exist, a response with status code of `404` is sent. The response body contains updated event document. The URL of the created item is in the `Location` header of the response object in the format `/events/<event._id`>.
+A successful response from this endpoint has the status code of `200`. The URL of the created item is in the `Location` header of the response object in the format `/events/<event._id`>. The response body contains the modified event document as a JSON payload. The following is an example of the JSON payload contained in the response body:
+
+```json
+
+```
+
+If the document to be updated does not exist, a response with status code of `404` is sent.
 
 
