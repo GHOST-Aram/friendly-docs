@@ -1,9 +1,9 @@
 ## POST `/venues`
 
-This endpoint allows venue managers/owners/landlords to create a new venue.
+This endpoint allows venue hosts (venue managers/owners/landlords) to create a new venue. Venue hosts are users of the `host` user group
 
 ### Authorization
-Only authenticated venue managers/owners/landlords can create venues. Venue managers/owners/landlords are users of the `host` user group. Visit the [authentication docs](../authentication/authentication.md) to acquire authentication token. Provide the token in the request `Authorization` header as `Bearer`.
+Only authenticated venue hosts can create venues. Visit the [authentication docs](../authentication/authentication.md) to acquire authentication token. Provide the token in the request `Authorization` header as `Bearer`.
 
 ### Request
 To create a new venue, provide the following venue details in the request body:
@@ -46,14 +46,9 @@ To create a new venue, provide the following venue details in the request body:
 - Availability status can only be `available`, `booked`, or `inactive`.
 
 
-### Response
+**Example:**
 
-A successful response from this endpoint has the status code of `201`. The response body contains created venue document. The URL of the created item is in the `Location` header of the response object in the format `/venues/<venue._id`>.
-
-
-Example:
-
-  ```javascript
+```javascript
     const data = {
         type: "5 star Hotel",
         name: "Paradise Eden",
@@ -131,4 +126,12 @@ Example:
 
     console.log('venue: ', body)
 })()
+```
+
+### Response
+
+A successful response from this endpoint has the status code of `201`. The response body contains created venue document. The URL of the created item is in the `Location` header of the response object in the format `/venues/<venue._id`>. The following is an example of the data in the JSON payload:
+
+```json
+
 ```
