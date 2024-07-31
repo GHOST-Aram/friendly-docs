@@ -17,7 +17,7 @@ Retrieve paginated lists of venue types in the system.
 Retrieve information about a specific venue type by id.
 - [Visit the documentation](./docs/[id]/get.md)
 
-## GET Multiple venue types by `hostId`
+## GET Multiple venue types by `creatorId`
 Retrieve information about a venue types listed by a specific admin or venue host.
 - [Visit the documentation](./docs/creators/[creatorId]/get.md)
 
