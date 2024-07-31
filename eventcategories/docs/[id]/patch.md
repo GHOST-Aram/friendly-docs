@@ -1,17 +1,17 @@
 ## PATCH `/event-categories`
 
-This endpoint allows event organizers and system admins to modify details of an event category. Event organizers and system admins are users of the `organizer` and `superuser` groups respectively.
+This endpoint allows event organizers and system admins to modify details of an event category. Event organizers and system admins are users of the groups `organizer` and `superuser` respectively.
 
 ### Authorization
-Only authenticated event organizers or system admins can modify an Event Category. 
+Only authenticated event organizers or system admins can modify an event category. Admins or event organizers can only update documents they created. If an admin tries to update a document created by another admin or an event organizer, the server will deny the request and respond with status code `403` (Forbidden). Same goes for event organizers.
 
-Admins or event organizers can only update documents they created. If an admin tries to update a document created by another admin or an event organizer, the server will deny the request and respond with status code `403` (Forbidden). Same goes for event organizers.
+Visit the [authentication docs](../authentication/authentication.md) to acquire authentication token. 
 
-Visit the [authentication docs](../authentication/authentication.md) to acquire authentication token. Provide the token in the request `Authorization` header as `Bearer`.
+Provide the token in the request `Authorization` header as `Bearer`.
 
 
 ### Request
-To update a new event, provide the following event details in the request body:
+Provide any or all of the following event details in the request body to modify details of an event category.
 
 ```typescript
     name: string
@@ -82,4 +82,11 @@ To update a new event, provide the following event details in the request body:
 
 ### Response
 
-A successful response from this endpoint has the status code of `200`. The response body contains the modified document. The URL to the modified item is in the `Location` header of the response object in the format `/event-categories/<eventCategory._id`>. If the document to be modified is not found, a response with status code of `404` is received.
+A successful response from this endpoint has the status code of `200`. The URL to the modified item is in the `Location` header of the response object in the format `/event-categories/<eventCategory._id`>. The response body contains the modified document.
+The following is an example of the JSON payload contained in the response body.
+
+```json
+
+```
+
+If the document to be modified is not found, a response with status code of `404` is received.
