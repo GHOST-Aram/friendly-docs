@@ -77,4 +77,8 @@ To create a new event category, provide the following event details in the reque
 
 ### Response
 
-A successful response from this endpoint has the status code of `201`. The response body contains created event category document. The URL of the created item is in the `Location` header of the response object in the format `/event-categories/<eventcategory._id`>.
+A successful response from this endpoint has the status code of `201`. The URL of the created item is in the `Location` header of the response object in the format `/event-categories/<eventcategory._id`>. The response body contains created event category document. The following is an example of the JSON payload contained in the response body:
+
+```json
+
+```
