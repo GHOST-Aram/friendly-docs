@@ -1,4 +1,4 @@
-## PUT `/venues`
+## PUT `/venues/:id`
 
 This endpoint allows venue hosts ( venue managers/owners/landlords) to update venue information. Venue hosts are users of the `host` user group.
 

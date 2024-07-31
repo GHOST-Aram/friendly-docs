@@ -1,4 +1,4 @@
-## PATCH `/venues`
+## PATCH `/venues/:id`
 
 This endpoint allows venue hosts ( venue managers/owners/landlords) to modify venue information.  Venue hosts are users of the `host` user group.
 
