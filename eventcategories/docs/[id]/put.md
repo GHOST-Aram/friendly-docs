@@ -1,11 +1,9 @@
 ## PUT `/event-categories`
 
-This endpoint allows event organizers and system admins to update event categories information. Event organizers and system admins are users of the `organizer` and `superuser` groups respectively.
+This endpoint allows event organizers and system admins to update the details of an event category. Event organizers and system admins are users of the `organizer` and `superuser` groups respectively.
 
 ### Authorization
-Only authenticated event organizers or system admins can update an Event Category. 
-
-Admins or event organizers can only update documents they created. If an admin tries to update a document created by another admin or another event organizer, the server will deny the request and respond with status code `403` (Fobbiden). Same goes for event organizers.
+Only authenticated event organizers or system admins can update an Event Category. Admins or event organizers can only update documents they created. If an admin tries to update a document created by another admin or another event organizer, the server will deny the request and respond with status code `403` (Fobbiden). Same goes for event organizers.
 
 Visit the [authentication docs](../authentication/authentication.md) to acquire authentication token. Provide the token in the request `Authorization` header as `Bearer`.
 
@@ -81,4 +79,12 @@ To update a new event category, provide the following event details in the reque
 
 ### Response
 
-A successful response from this endpoint has the status code of `200`. If the document to be updated does not exist, a new document is updated and a response with status code of `201` is sent. The response body contains updated/created event category document. The URL of the updated item is in the `Location` header of the response object in the format `/event-categories/<eventCategory._id`>.
+A successful response from this endpoint has the status code of `200`. The URL of the updated item is in the `Location` header of the response object in the format `/event-categories/<eventCategory._id`>. The response body contains updated event category document. 
+
+The following is an example of the JSON payload contained in the response body:
+
+```json
+
+```
+
+If the document to be updated does not exist, a new document is created and a response with status code of `201` is returned.
