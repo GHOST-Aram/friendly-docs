@@ -1,19 +1,19 @@
 ## GET `event-categories/:id`
 
-This endpoint allows users to retrieve details of an cvent category using a specified event category ID.
+This endpoint allows users to retrieve details of an Event category by a specified event category ID.
 
 ### Authorization
-All users, including anonymous users, can view details of an Event Category. Authentication is therefore not required for this endpoint.
+All users, including anonymous users, can view details of an event category. Authentication is therefore not required for this endpoint.
 
 
 ### Request
-To get the details of an event category with a specific id, provide the id as a url parameter as shown below:
+Provide the id of the target event category as a url parameter as shown below to fetch its details:
 
 ```javascript
 '/event-categories/<eventCategory._id>'
 ```
 
-#### Example
+**Example**
 
 ```javascript
 (async() =>{
@@ -27,16 +27,10 @@ To get the details of an event category with a specific id, provide the id as a 
 ```
 
 ### Response
-A successful response sent from this endpoint has a status code of `200`. The details are contained in the response body as a JSON payload. The JSON payload contains a Event Category object with the following details:
+A successful response sent from this endpoint has a status code of `200`. The details are contained in the response body as a JSON payload. The following is an example of the JSON payload contained in the response body:
 
-```javascript
-    _id: string
-    name: string
-    description: string
-    createdBy?: ObjectId
-    graphic?: {
-        name: string,
-        data: string
-        contentType: string
-    }
+```json
+
 ```
+
+If the document with the provided Id is not found, a response with status code of `404` is returned.
