@@ -1,24 +1,24 @@
 ## GET /users
 
-This endpoint allows the client to retrieve a list of users that are registered with the system. 
-
-The response returns a paginated list by default, the default pagination limit is 10, you can change this value using query parameters.
+This endpoint allows the client to retrieve a list of users that are registered with the system. The response returns a paginated list by default, the default pagination limit is 10, you can change this value using query parameters.
 
 
 ## Authorization
 Only authenticated users with admin rights (superusers) can read the list of all users. Visit the [authentication documentation](../authentication/auth.md) to find out how to get an authorization token.
 
 ### Request
-You can send a request to view list of users with the desired pagination constraints or without pagination constraints. If the request does not include client defined constraints, the system will use it's default pagination constraints to process the request. Pagination constraints can be defined using the following query parameters:
+You can send a request to view list of users with the desired pagination constraints or without pagination constraints. Pagination constraints can be defined using the following query parameters:
 
 - `page`: number
 - `limit`: number
 
 Pagination constraints can be included in the url as shown in the following URL
 
-```t
-/users?page=2&&limit=21
+```javascript
+'/users?page=2&&limit=21'
 ```
+
+If the request does not include client defined constraints, the system will use it's default pagination constraints to process the request.
 
 **Example**
 
