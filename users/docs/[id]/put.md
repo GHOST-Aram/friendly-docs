@@ -4,7 +4,9 @@ This endpoint allows you to apply full updates on the details of a specific user
 
 ### Authenticated
 
-Only authenticated users can update their information. Visit the [authorization documentation](../../../authentication/authentication.md) to learn how to acquire authentication token.
+Only authenticated users can update their information. A user can only update a document they own. If a user tries to update a document owned by another user, a `Forbidden 403` response will be received. 
+
+Visit the [authorization documentation](../../../authentication/authentication.md) to learn how to acquire authentication token.
 
 
 ### Request
@@ -24,6 +26,7 @@ To update information for a specific user, provide the following user details in
     userGroup?: 'host' | 'organizer' | 'attendee' | 'superuser'
 ```
 
+
 **Notes:**
 - The `userGroup` can only be a `host`, `organizer`, an `attendee` or a `superuser`. If not provided, the system will use the `attendee` group as default. 
 
@@ -34,12 +37,6 @@ To update information for a specific user, provide the following user details in
 
 - The profile picture is optional but if provided, must be an image file with the extension *.jpg, .jpeg, .png , .avif, or .jfif*
 - Password can be any string of length between 8 and 100 characters
-
-### Response
-
-A successfull PUT request receives a response with a status code of `200`. If the document to be updated does not exist, a new document is created and a response with status code of `201` is sent. 
-
-The URL to the updated user documents is available in the `Location` header of the response object. The response body contains a json payload containing the updated user details.
 
 **Example:**
 
@@ -96,4 +93,19 @@ The URL to the updated user documents is available in the `Location` header of t
 
     console.log('User: ', body)
 })()
+```
+
+### Response
+
+A successfull PUT request receives a response with a status code of `200`. If the document to be updated does not exist, a new document is created and a response with status code of `201` is sent. 
+
+The URL to the updated user documents is available in the `Location` header of the response object. The response body contains a json payload containing the updated user details. Below is an example of an updated user document.
+
+```json
+    "_id": "669e526fa9ed3824e6db2db9",
+    "fullName": "Curtis Jackson",
+    "userGroup": "organizer",
+    "email": "Nyasia.Kreiger@gmail.com",
+    "password": "$2b$10$NkE10T4T8zCVvIawiFHkb.MRV19Nstb9do.aD58pGAaq.um1aPa4i",
+    "__v": 1
 ```
