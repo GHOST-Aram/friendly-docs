@@ -5,10 +5,10 @@ This endpoint allows venue hosts ( venue managers/owners/landlords) to modify ve
 ### Authorization
 Only authenticated venue hosts can modify venues. A venue host can only update a document they own. If a venue host tries to update a document owned (was created) by another venue host, a `Forbidden 403` response will be received.
 
-Visit the [authentication docs](../authentication/authentication.md) to acquire authentication token. Provide the token in the request `Authorization` header as `Bearer`.
+Visit the [authentication docs](../authentication/authentication.md) to acquire authentication token.
 
 ### Request
-To modify an venue information via PATCH method, provide the following venue details in the request:
+Provide any or all of the following venue details in the request body:
 
 
 ```typescript
@@ -43,6 +43,8 @@ To modify an venue information via PATCH method, provide the following venue det
     }
 }
 ```
+
+Provide the token in the request `Authorization` header as `Bearer`.
 
 **Notes**
 - Booking timespan can only be `hour`, `day`, `week` or `month`.
