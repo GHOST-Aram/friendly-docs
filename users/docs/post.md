@@ -6,7 +6,7 @@ This endpoint allows you to create a new user.
 You do not need authorization to use this endpoint.
 
 ### Request
-To create a new user, provide the following user details in the request body:
+provide the following user details in the request body to create a new user:
 
 ```typescript
     pictureUrl?: string
@@ -81,9 +81,7 @@ To create a new user, provide the following user details in the request body:
 ```
 ### Response
 
-A successful response from this endpoint has the status code of `201`. The response body contains created user document. The URL of the created item is in the `Location` header of the response object in the format `/users/<user_id`>. You can rely on this URL to view user profile after creating a new user. 
-
-Below is an example of user document returned in the response body.
+A successful response from this endpoint has the status code of `201`. The URL of the created item is in the `Location` header of the response object in the format `/users/<user_id`>.The response body contains created user document. Below is an example of user document returned in the response body:
 
 ```json
 {
