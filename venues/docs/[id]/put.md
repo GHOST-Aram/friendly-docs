@@ -1,9 +1,11 @@
 ## PUT `/venues`
 
-This endpoint allows venue managers/owners/landlords to create a new venue.
+This endpoint allows venue hosts ( venue managers/owners/landlords) to update venue information. Venue hosts are users of the `host` user group.
 
 ### Authorization
-Only authenticated venue managers/owners/landlords can update venues. Venue managers/owners/landlords are users of the `host` user group. Visit the [authentication docs](../authentication/authentication.md) to acquire authentication token. Provide the token in the request `Authorization` header as `Bearer`.
+Only authenticated venue hosts can update venues. A venue host can only update a document they own. If a venue host tries to update a document owned (was created) by another venue host, a `Forbidden 403` response will be received.
+
+Visit the [authentication docs](../authentication/authentication.md) to acquire authentication token. Provide the token in the request `Authorization` header as `Bearer`.
 
 ### Request
 To update an venue via PUT method, provide the following venue details in the request:
@@ -46,13 +48,7 @@ To update an venue via PUT method, provide the following venue details in the re
 - Booking timespan can only be `hour`, `day`, `week` or `month`.
 - Availability status can only be `available`, `booked`, or `inactive`.
 
-
-### Response
-
-A successful response from this endpoint has the status code of `200`. If the document to be updated does not exist, a new document is created and a response with status code of `201` is sent. The response body contains updated venue document. The URL of the created item is in the `Location` header of the response object in the format `/venues/<venue._id`>.
-
-
-Example:
+**Example:**
 
   ```javascript
     const data = {
@@ -132,4 +128,11 @@ Example:
 
     console.log('venue: ', body)
 })()
+```
+
+### Response
+
+A successful response from this endpoint has the status code of `200`. If the document to be updated does not exist, a new document is created and a response with status code of `201` is sent. The URL of the created item is in the `Location` header of the response object in the format `/venues/<venue._id`>. The response body contains updated venue document. The following is an example of the JSON payload contained in the response body.
+
+```json
 ```
