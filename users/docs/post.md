@@ -13,6 +13,7 @@ provide the following user details in the request body to create a new user:
     fullName: string
     email: string
     password: string 
+    profilePicture: File
     userGroup?: 'host'|'organizer' | 'attendee' | 'superuser'
 ```
 
@@ -84,10 +85,26 @@ provide the following user details in the request body to create a new user:
 A successful response from this endpoint has the status code of `201`. The URL of the created item is in the `Location` header of the response object in the format `/users/<user_id`>.The response body contains created user document. Below is an example of user document returned in the response body:
 
 ```json
+// without file
+
 {
     "fullName": "Darlene Hills",
     "userGroup": "superuser",
     "email": "Jaqueline90@yahoo.com",
     "_id": "66aa4bedec6f618a02667e38"
+}
+
+// with File
+{
+    "fullName": "Frank Odoi",
+    "profilePicture": {
+        "data": "/9j/4ddIRXhpZ...",
+        "name": "1722439413210_20240318_165915.jpg",
+        "contentType": "image/jpeg"
+    },
+    "userGroup": "superuser",
+    "email": "frankodoi77@gmail.com",
+    "_id": "66aa56f5065be438fdd14b4e",
+    "__v": 0
 }
 ```
