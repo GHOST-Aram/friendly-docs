@@ -45,20 +45,18 @@ A success response from this endpoint has a status code of `200`. The list of us
 ```json
 [
     {
-    "_id": "669e526fa9ed3824e6db45b9",
-    "fullName": "Darlene Hills",
-    "userGroup": "superuser",
-    "email": "RafaelBergnaum@gmail.com",
-    "password": "$2b$10$NkE10T4T8zCVvIawiFHkb.MRV19Nstb9do.aD5fewer.um1aPa4i",
-    "__v": 0
-},
-{
-    "_id": "669e526fa9ed3824e6db2db9",
-    "fullName": "Darlene Hills",
-    "userGroup": "superuser",
-    "email": "RafaelBergnaum@yahoo.com",
-    "password": "$2b$10$NkE10T4T8zCVvIawiFHkb.MRV19Nstb9do.aD58pGAaq.um1aPa4i",
-    "__v": 0
-}
+        "_id": "66aa425d6e3b901410065476",
+        "fullName": "Darlene Hills",
+        "userGroup": "superuser",
+        "email": "RafaelBergnaum@erd.edu",
+        "__v": 0
+    },
+    {
+        "_id": "66aa43ae6e3b901410065479",
+        "fullName": "Darlene Hills",
+        "userGroup": "host",
+        "email": "host_Bergnaum5@gmail.com",
+        "__v": 0
+    },
 ]
 ```
