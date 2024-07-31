@@ -97,12 +97,11 @@ A successfull PATCH request receives a response with a status code of `200`.  Th
 
 ```json
 {
-    "_id": "669e526fa9ed3824e6db2db9",
-    "fullName": "Curtis Jackson",
+    "_id": "66aa425d6e3b901410065476",
+    "fullName": "Darlene Hills",
     "userGroup": "superuser",
-    "email": "Nyasia.Kreiger@gmail.com",
-    "password": "$2b$10$NkE10T4T8zCVvIawiFHkb.MRV19Nstb9do.aD58pGAaq.um1aPa4i",
-    "__v": 1
+    "email": "RafaelBergnaum@yahoo.com",
+    "__v": 0
 }
 ```
 
