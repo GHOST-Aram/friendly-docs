@@ -47,7 +47,9 @@ The endpoint accepts an a registered valid `email` andress and a `password` as i
 If you provide correct credentials, you will receive response with status code `201`. The response body contains the authorization token. The following is an example of the JSON payload contained in the response body:
 
 ``` json
-
+    {
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IlJhZmFlbEJlcmduYXVtQGVyZC5lZHUiLCJmdWxsTmFtZSI6IkRhcmxlbmUgSGlsbHMiLCJ1c2VyR3JvdXAiOiJzdXBlcnVzZXIiLCJpZCI6IjY2YWE0MjVkNmUzYjkwMTQxMDA2NTQ3NiIsImlhdCI6MTcyMjQzNDE4MCwiZXhwIjoxNzI1MDI2MTgwLCJzdWIiOiI2NmFhNDI1ZDZlM2I5MDE0MTAwNjU0NzYifQ.ZIY4jzsg21IY2esNB9W5-XYU4p9_xbI_4LzyfqquNCI"
+    }
  ```
 
 If either the password or the email is do not match, you will receive a response with status code `401`, `Unauthorised`. The response body will contain a text message showing which of the credentials did not match.
