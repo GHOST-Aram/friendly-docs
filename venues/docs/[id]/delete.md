@@ -3,14 +3,19 @@
 This endpoint allows clients to remove a specific venue with the provided ID from listings.
 
 ### Authorization
-Authentication is needed to access this endpoint. Only users of the group `host` can delete venue documents. Venues can only be deleted by the venue hosts that created them. If a venue host tries to delete a document owned (that was created) by another venue host, a `Forbidden` with status code `403` response will be returned. 
+Authentication is needed to access this endpoint. Only users of the group `host` can delete venue documents. Venues can only be deleted by the venue hosts that created them. If a venue host tries to delete a document owned (that was created) by another venue host, a `Forbidden` response with status code `403` will be returned. 
 
 Visit [Authentication documentation](../../../authentication/authentication.md) to learn how to get an authentication token.
 
-Provide the token in the `Authorization` header as Bearer. 
 
 ### Request
-To delete the details of a venue, provide the id of the venue as a url parameter. 
+Provide the id of the venue document to be deleted as a url parameter an shown below:
+
+```javascript
+'/venues/<venueId>'
+```
+
+Provide the token in the `Authorization` header as Bearer. 
 
 **Example:**
 
@@ -39,4 +44,4 @@ A valid response of a request to this endpoint has a status code `200`. The resp
 "65e449f3a72eaa435166c76c"
 ```
 
-If the target of deletion is not found, a response of status code `404` is returned. 
+If the event document to be deleted is not found, a response of status code `404` is returned. 
