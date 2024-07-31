@@ -52,7 +52,7 @@ Provide the *authorization token* as Bearer in the `Authorization` header of the
     formData.append('profilePicture', '<variable holding a selected file>')
     
     
-    const response = await fetch('<BASE_URL>/users', {
+    const response = await fetch('<BASE_URL>/users/<userId>', {
         method: 'PUT',
         body: formData,
         headers: {
@@ -79,7 +79,7 @@ Provide the *authorization token* as Bearer in the `Authorization` header of the
     }
     
     
-    const response = await fetch('<BASE_URL>/users', {
+    const response = await fetch('<BASE_URL>/users/<userId>', {
         method: 'PUT',
         body: JSON.stringify(data),
         headers:{
@@ -99,12 +99,13 @@ Provide the *authorization token* as Bearer in the `Authorization` header of the
 A successfull PUT request receives a response with a status code of `200`. The URL to the updated user documents is available in the `Location` header of the response object. The response body contains a json payload containing the updated user details. Below is an example of an updated user document contained in the response body.
 
 ```json
-    "_id": "669e526fa9ed3824e6db2db9",
-    "fullName": "Curtis Jackson",
-    "userGroup": "organizer",
-    "email": "Nyasia.Kreiger@gmail.com",
-    "password": "$2b$10$NkE10T4T8zCVvIawiFHkb.MRV19Nstb9do.aD58pGAaq.um1aPa4i",
-    "__v": 1
+{
+    "_id": "66aa425d6e3b901410065476",
+    "fullName": "Darlene Hills",
+    "userGroup": "superuser",
+    "email": "RafaelBergnaum@yahoo.com",
+    "__v": 0
+}
 ```
 
 If the document to be updated is not found, a new document is created and a response with status code of `201` is sent. 
