@@ -1,6 +1,6 @@
 ## GET `venue-types/:id`
 
-This endpoint allows users to retrieve venue types details using a specific venue type ID.
+This endpoint allows users to retrieve details of venue types using a specific venue type ID.
 
 ### Authorization
 All users, including anonymous users, can view venue type details. Authentication is therefore not required for this endpoint.
@@ -13,7 +13,7 @@ To get the details of a venue type with a specific id, provide the id as a url p
 /venue-type/<venueId>
 ```
 
-#### Example
+**Example**
 
 ```javascript
 (async() =>{
@@ -27,13 +27,10 @@ To get the details of a venue type with a specific id, provide the id as a url p
 ```
 
 ### Response
-A successful response sent from this endpoint has a status code of `200`. The venue type details are contaied in the response body as a json payload. The json payload contains a venue object with the following details:
+A successful response sent from this endpoint has a status code of `200`. The venue type details are contanied in the response body as a json payload. The following is an example of the JSON payload contained in the response body:
 
-```javascript
-    {
-        _id: string
-        name: string
-        createdBy: ObjectId
-        description: string
-    }
+```json
+
 ```
+
+If the document to be modified is not found, a response with status code of `404` is sent.
