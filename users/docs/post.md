@@ -88,10 +88,12 @@ A successful response from this endpoint has the status code of `201`. The URL o
 // without file
 
 {
-    "fullName": "Darlene Hills",
+    "fullName": "Frank Odoi",
+    "pictureUrl": "https://cloud.mongodb.com/v2/64ae67d7c53a03549c2f2fad#/metrics/replicaSet/64ae67fef45c296f5e5c64f8/explorer/vestiger-users/users/find",
     "userGroup": "superuser",
-    "email": "Jaqueline90@yahoo.com",
-    "_id": "66aa4bedec6f618a02667e38"
+    "email": "frankodoi9@gmail.com",
+    "_id": "66aa594b8b3a69985f9862f0",
+    "__v": 0
 }
 
 // with File
