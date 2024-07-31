@@ -111,5 +111,25 @@ Provide the *authentication token* in the request `Authorization` header as `Bea
 A successful response from this endpoint has the status code of `201`. The URL of the created item is in the `Location` header of the response object in the format `/events/<event._id`>. The response body contains the created event document. The following is an example of the JSON contained in the response body:
 
 ```json
-
+{
+    "category": "Music",
+    "venue": "Madison Square Garden",
+    "title": "Rock Concert",
+    "createdBy": "66aa441b6e3b90141006547c",
+    "city": "New York",
+    "date": "8 August 2024",
+    "time": {
+        "start": "01:00 PM",
+        "end": "9:00 PM",
+        "zone": "GMT+03:00"
+    },
+    "duration": "3 hours",
+    "ageLimit": {
+        "min": 18,
+        "max": 60
+    },
+    "availableTickets": 5000,
+    "_id": "66aa6120a94970eab95acec8",
+    "__v": 0
+}
 ```
