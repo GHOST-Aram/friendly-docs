@@ -5,10 +5,10 @@ This endpoint allows venue hosts ( venue managers/owners/landlords) to update ve
 ### Authorization
 Only authenticated venue hosts can update venues. A venue host can only update a document they own. If a venue host tries to update a document owned (was created) by another venue host, a `Forbidden 403` response will be received.
 
-Visit the [authentication docs](../authentication/authentication.md) to acquire authentication token. Provide the token in the request `Authorization` header as `Bearer`.
+Visit the [authentication docs](../authentication/authentication.md) to acquire authentication token.
 
 ### Request
-To update an venue via PUT method, provide the following venue details in the request:
+provide the all of following venue details in the request body:
 
 
 ```typescript
@@ -43,6 +43,8 @@ To update an venue via PUT method, provide the following venue details in the re
     }
 }
 ```
+
+Provide the token in the request `Authorization` header as `Bearer`.
 
 **Notes**
 - Booking timespan can only be `hour`, `day`, `week` or `month`.
