@@ -1,16 +1,20 @@
 ## DELETE `/events/:id`
 
-This endpoint sends a HTTP DELETE request to remove a specific event with the provided ID.
+This allows the client to remove a specific event with the provided ID. Only event organizers can delete event documents. Event organizers are members of the `organizer` user group.
 
 ### Authorization
-Authentication is needed to access this endpoint. Only users of the group `organizer` can delete event documents. Event documents can only be deleted by the event organizers that own them. 
-
-If one event organizer tries to delete an event document created by another event organizer, a `Forbidden` with response status `403` will be received.
+Authentication is needed to access this endpoint. Event documents can only be deleted by the event organizers that own (created) them. If one event organizer tries to delete an event document created by another event organizer, a `Forbidden` response with status `403` will be sent.
 
 Visit [Authentication documentation](../../authentication/auth.md) to learn how to get an authentication token.
 
 ### Request
-To delete the details of a event, provide the id of the event as a url parameter. Provide the token in the `Authorization` header as Bearer. 
+Provide the id of the event document to be deleted as a url parameter as shown below:
+
+```javascript
+/events/<eventId>
+```
+
+Provide the *authentication token* in the `Authorization` header as Bearer. 
 
 **Example:**
 
@@ -33,4 +37,9 @@ To delete the details of a event, provide the id of the event as a url parameter
 
 
 ### Response
-A valid response of a request to this endpoint has a status code `200`. If the target of deletion is not found, a response of status code `404` is received. The response body contains the id of the deleted event.
+A valid response of a request to this endpoint has a status code `200`. The response body contains the id of the deleted event. The following is an example of the JSON payload contained in the response body:
+
+```json
+    "65e449f3a72eaa435166c76c"
+```
+If the event document to be deleted is not found, a response of status code `404` is sent.
