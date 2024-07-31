@@ -39,5 +39,33 @@ If the request does not include client defined pagination constraints, the syste
 A success response from this endpoint has a status code of `200`. The list of events is contained in the response body as a JSON payload. The following is an example of the JSON payload contained in the response body:
 
 ```json
-
+[
+    {
+        "category": "Music",
+        "venue": "Madison Square Garden",
+        "title": "Rock Concert",
+        "createdBy": "66aa441b6e3b90141006547c",
+        "graphic": {
+            "name": "1722444814279_20240318_165856.jpg",
+            "data": "/9j/4dbgRXhpZgAASUkq...",
+            "contentType": "image/jpeg"
+        },
+        "city": "Nairobi",
+        "date": "8 August 2024",
+        "time": {
+            "start": "01:00 PM",
+            "end": "09:00 PM",
+            "zone": "GMT+03:00"
+        },
+        "duration": "8 hours",
+        "ageLimit": {
+            "min": 18,
+            "max": 60
+        },
+        "availableTickets": 5000,
+        "ticketPrice": 5900,
+        "_id": "66aa6c0e1001f0abc83679d3",
+        "__v": 0
+    }
+]
 ```
