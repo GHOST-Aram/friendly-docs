@@ -133,5 +133,81 @@ To create a new venue, provide the following venue details in the request body:
 A successful response from this endpoint has the status code of `201`. The response body contains created venue document. The URL of the created item is in the `Location` header of the response object in the format `/venues/<venue._id`>. The following is an example of the data in the JSON payload:
 
 ```json
+{
 
+    //Without image files
+    "type": "S star Hotel",
+    "name": "Paradise Hole Mombasa",
+    "capacity": 20000,
+    "bookingTerms": {
+        "fee": 500000,
+        "timeSpan": "day"
+    },
+    "availabilityStatus": "available",
+    "createdBy": "66aa43ae6e3b901410065479",
+    "address": {
+        "cityOrTown": "Nairobi",
+        "street": "34 North",
+        "block": {
+            "name": "Paradise Hole Mombasa",
+            "floor": 12
+        }
+    },
+    "description": "Lorem ipsum dolor sit, amet consectetu adipisicing elit. Maiores libero illo praesentium autem nesciunt consectetur repudiandae omnis eum similique in, quas rerum. Eveniet, possimus doloremque?",
+    "accessibilityFeatures": {
+        "stairCase": true,
+        "elevator": true,
+        "escallator": false,
+        "ramp": true
+    },
+    "coordinates": {
+        "latitude": -36.3,
+        "longitude": -12.5
+    },
+    "_id": "66aa959fa956d58c201e28db",
+    "pictures": [],
+    "__v": 0
+}
+
+//With image files
+{
+    "type": "5 start Hotel",
+    "name": "Paradise Hotel Mombasa",
+    "capacity": 20000,
+    "bookingTerms": {
+        "fee": 500000,
+        "timeSpan": "day"
+    },
+    "availabilityStatus": "available",
+    "createdBy": "66aa43ae6e3b901410065479",
+    "address": {
+        "block": {
+            "name": "Paradise Hotle MSA",
+            "floor": 12
+        },
+        "cityOrTown": "Mombasa",
+        "street": "Ngina Drive"
+    },
+    "pictures": [
+        {
+            "name": "1722457061307_file-upload.png",
+            "data": "iVBORw...",
+            "contentType": "image/png",
+            "_id": "66aa9be5e641b3d6e3c020d6"
+        }
+    ],
+    "description": "Lorem ipsum dolor sit, amet consectetu adipisicing elit. Maiores libero illo praesentium autem nesciunt consectetur repudiandae omnis eum similique in, quas rerum. Eveniet, possimus doloremque?",
+    "accessibilityFeatures": {
+        "stairCase": true,
+        "elevator": true,
+        "escallator": false,
+        "ramp": true
+    },
+    "coordinates": {
+        "latitude": -36.3,
+        "longitude": -12.5
+    },
+    "_id": "66aa9be5e641b3d6e3c020d3",
+    "__v": 0
+}
 ```
