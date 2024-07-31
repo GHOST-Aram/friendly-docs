@@ -9,7 +9,7 @@ The response returns a paginated list by default. The default pagination limit i
 All users, including anonymous users, can view venue types listings. Authentication is therefore not required for this endpoint.
 
 ### Request
-You can send a request to fetch a list of venue types with the desired pagination constraints. If the request does not include client defined pagination constraints, the system will use it's default pagination constraints to process the request. Pagination constraints can be defined using the following query parameters:
+You can send a request to fetch a list of venue types with the desired pagination constraints. Pagination constraints can be defined using the following query parameters:
 
 - `page`: number
 - `limit`: number
@@ -20,7 +20,9 @@ Pagination constraints can be included in the url as shown in the following URL
 /venue-types?page=2&&limit=21
 ```
 
-#### Example
+If the request does not include client defined pagination constraints, the system will use it's default pagination constraints to process the request.
+
+**Example**
 
 ```javascript
 (asyn() =>{
@@ -36,13 +38,8 @@ Pagination constraints can be included in the url as shown in the following URL
  ```
 
 ### Response
-A success response from this endpoint has a status code of 200. The list of venues is contained in the response body as a JSON payload. Each object in the venues array contains the following venue details:
+A success response from this endpoint has a status code of `200`. The list of venues is contained in the response body as a JSON payload. The following is an example of the JSON payload contained in the response body:
 
-```javascript
-    {
-        _id: string
-        name: string
-        createdBy: ObjectId
-        description: string
-    }
+```json
+
 ```
