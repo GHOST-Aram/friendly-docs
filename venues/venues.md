@@ -17,9 +17,9 @@ Retrieve paginated lists of venues in the system.
 Retrieve information about a specific venue by id.
 - [Visit the documentation](./docs/[id]/get.md)
 
-## GET Multiple venues by `hostId`
+## GET Multiple venues by `creatorId`
 Retrieve information about a venues listed by a specific host.
-- [Visit the documentation](./docs/hosts/[hostId]/get.md)
+- [Visit the documentation](./docs/creators/[creatorId]/get.md)
 
 ## PUT venue
 Update venue information.
