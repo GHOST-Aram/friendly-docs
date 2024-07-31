@@ -1,24 +1,23 @@
-# The Authenticator
+# The Authenticator *POST  URL - `<BASE_URL>/auth`*
 
 The Authenticator uses JWT tokens to control user access to various apps or parts of the apps in the system. The Authenticator does not register users. Users can be registered in a separate application from Authenticator. The app verifies the user credentials stored in the authentication token against the credentials of registered users in the system before granting access. 
 
 This app is only exposed on one route, a `POST` route. Below is a guide on how to acquire an authentication token through the `POST` route.
 
-*POST  URL - `<BASE_URL>/auth`*
-
-
 ### Request
-The endpoint accepts an a registered valid `email` andress and a `password` as input values. The password can be any string not be less than 8 characters and not longer than 100 characters.
+The endpoint accepts an a registered valid `email` andress and a `password` as input values.
 
 ``` json
 {
     "email": "<registered user email>",
     "password": "< Correct user password>"
 }
-
 ```
 
- The code snippet below provides an example on how to make requests to authenticator `POST` route.
+**Note**
+- The password can be any string not be less than 8 characters and not longer than 100 characters
+
+**Example**
 
 ```javascript
 (async() =>{
@@ -45,12 +44,10 @@ The endpoint accepts an a registered valid `email` andress and a `password` as i
 ```
 
 ### Response
-If you provide correct credentials, you will receive response with status code `201` and an authorization token. The authorization token will be contained in the body of the response as a JSON string. For wrong credentials, you will receive a response with status code `401`, `Unauthorised`. 
-
-The following code shows the structure of the content of the response body:
+If you provide correct credentials, you will receive response with status code `201`. The response body contains the authorization token. The following is an example of the JSON payload contained in the response body:
 
 ``` json
-{
-    "token": "<token>"
-}
+
  ```
+
+If either the password or the email is do not match, you will receive a response with status code `401`, `Unauthorised`. The response body will contain a text message showing which of the credentials did not match.
