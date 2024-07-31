@@ -1,9 +1,9 @@
 ## POST `/events`
 
-This endpoint allows event organizers to create a new event document.
+This endpoint allows event organizers to create a new event document. Event organizers are users of the `organizer` user group.
 
 ### Authorization
-Only authenticated event organizers can create events. Event organizers are users of the `organizer` user group. Visit the [authentication docs](../authentication/authentication.md) to acquire authentication token. Provide the token in the request `Authorization` header as `Bearer`.
+Only authenticated event organizers can create events. Visit the [authentication docs](../authentication/authentication.md) to acquire authentication token. 
 
 ### Request
 To create a new event, provide the following event details in the request body:
@@ -29,6 +29,7 @@ To create a new event, provide the following event details in the request body:
     ticketPrice: number
 ```
 
+Provide the *authentication token* in the request `Authorization` header as `Bearer`.
 
 **Notes**
 - The event graphic is optional but if provided, must be an image file with the extension *.jpg, .jpeg, .png , .avif, or .jfif*
@@ -107,4 +108,8 @@ To create a new event, provide the following event details in the request body:
 
 ### Response
 
-A successful response from this endpoint has the status code of `201`. The response body contains the created event document. The URL of the created item is in the `Location` header of the response object in the format `/events/<event._id`>.
+A successful response from this endpoint has the status code of `201`. The URL of the created item is in the `Location` header of the response object in the format `/events/<event._id`>. The response body contains the created event document. The following is an example of the JSON contained in the response body:
+
+```json
+
+```
