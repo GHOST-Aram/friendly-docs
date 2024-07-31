@@ -13,19 +13,7 @@ To get the details of a user with a specific id, provide the id as a url paramet
 /users/<userId>
 ```
 
-### Response
-A successful response sent from this endpoint has a status code of 200. The user details are contaied in the response body as a json payload. The json payload contains a user object with the following details:
-
-```javascript
-    _id: string
-    fullName: String
-    email: string
-    password: string
-    userGroup: string
-    pictureUrl?: string
-```
-
-Example
+**Example**
 ```javascript
 (async() =>{
     const response =  await fetch('<BASE_URL>/users/65e40da5c390b114451cebb5',{
@@ -38,4 +26,18 @@ Example
     const body = await response.json()
     console.log(body)
 })()
+```
+
+### Response
+A successful response sent from this endpoint has a status code of `200`. The user details are contaied in the response body as a json payload. The following is an example of a user object contained in the response body as a JSON payload.
+
+```json
+{
+    "_id": "65e40da5c390b114451cebb5",
+    "fullName": "Curtis Jackson",
+    "userGroup": "superuser",
+    "email": "Nyasia.Kreiger@gmail.com",
+    "password": "$2b$10$NkE10T4T8zCVvIawiFHkb.MRV19Nstb9do.aD58pGAaq.um1aPa4i",
+    "__v": 1
+}
 ```
