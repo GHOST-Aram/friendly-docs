@@ -1,10 +1,10 @@
 ## PUT `users/:id`
 
-This endpoint allows you to apply partial or full updates on the details of a specific user.
+This endpoint allows you to modify the details of a specific user.
 
 ### Authenticated
 
-Only authenticated users can update their information. A user can only update a document they own. If a user tries to update a document owned by another user, a `Forbidden 403` response will be received. 
+Only authenticated users can update their information. A user can only update a document they own. If a user tries to update a document owned by another user, a `Forbidden` response with status code `403` will be sent. 
 
 Visit the [authorization documentation](../../../authentication/authentication.md) to learn how to acquire authentication token.
 
@@ -13,9 +13,7 @@ Visit the [authorization documentation](../../../authentication/authentication.m
 
 Provide the id of the user as a url parameter. The id in the parameter has to be the same as the id of the user sending this request, this is because users can only update their own details and not the details of other users.
 
-Provide the authorization token as Bearer in the `Authorization` header of the request.
-
-To update information for a specific user, provide the following user details in the request body:
+Provide any or all of the following user details in the request body to modify a user document:
 
 ```typescript
     profilePicture?: File 
@@ -25,6 +23,8 @@ To update information for a specific user, provide the following user details in
     password: string 
     userGroup?: 'host' | 'organizer' | 'attendee' | 'superuser'
 ```
+
+Provide the *authorization token* as Bearer in the `Authorization` header of the request.
 
 **Notes:**
 - The `userGroup` can only be a `host`, `organizer`, an `attendee` or a `superuser`. If not provided, the system will use the `attendee` group as default. 
@@ -92,9 +92,7 @@ To update information for a specific user, provide the following user details in
 
 ### Response
 
-A successfull PATCH request receives a response with a status code of `200`. If the document to be updated does not exist, a response with status code of `404` is sent. 
-
-The URL to the updated user documents is available in the `Location` header of the response object. The response body contains a json payload containing the updated user details. Below is an example of user document returned in the response body.
+A successfull PATCH request receives a response with a status code of `200`.  The URL to the updated user documents is available in the `Location` header of the response object. The response body contains a json payload containing the updated user details. Below is an example of user document returned in the response body.
 
 
 ```json
@@ -107,3 +105,5 @@ The URL to the updated user documents is available in the `Location` header of t
     "__v": 1
 }
 ```
+
+If the document to be modifed is not, a response with status code of `404` is sent.
