@@ -4,7 +4,9 @@ This endpoint allows you to apply partial or full updates on the details of a sp
 
 ### Authenticated
 
-Only authenticated users can update their information. Visit the [authorization documentation](../../../authentication/authentication.md) to learn how to acquire authentication token.
+Only authenticated users can update their information. A user can only update a document they own. If a user tries to update a document owned by another user, a `Forbidden 403` response will be received. 
+
+Visit the [authorization documentation](../../../authentication/authentication.md) to learn how to acquire authentication token.
 
 
 ### Request
@@ -35,13 +37,7 @@ To update information for a specific user, provide the following user details in
 - The profile picture is optional but if provided, must be an image file with the extension *.jpg, .jpeg, .png , .avif, or .jfif*
 - Password can be any string of length between 8 and 100 characters
 
-### Response
-
-A successfull PATCH request receives a response with a status code of 200. If the document to be updated does not exist, a response with status code of 404 is sent. 
-
-The URL to the updated user documents is available in the `Location` header of the response object. The response body contains a json payload containing the updated user details.
-
-### Example:
+**Example:**
 
 1. With Profile picture
 
@@ -51,8 +47,6 @@ The URL to the updated user documents is available in the `Location` header of t
 
     formData.append('fullName', 'Curtis Jackson')
     formData.append('email', 'Nyasia.Kreiger@gmail.com')
-    formData.append('password', 'password3')
-    formData.append('userGroup', 'host')
     formData.append('profilePicture', '<variable holding a selected file>')
     
     
@@ -78,8 +72,6 @@ The URL to the updated user documents is available in the `Location` header of t
     const data = {
         fullName: 'Curtis Jackson'
         email: 'Nyasia.Kreiger@gmail.com'
-        password: 'password3'
-        userGroup: 'organizer'
     }
     
     
@@ -98,13 +90,20 @@ The URL to the updated user documents is available in the `Location` header of t
 })()
 ```
 
+### Response
+
+A successfull PATCH request receives a response with a status code of `200`. If the document to be updated does not exist, a response with status code of `404` is sent. 
+
+The URL to the updated user documents is available in the `Location` header of the response object. The response body contains a json payload containing the updated user details. Below is an example of user document returned in the response body.
+
+
 ```json
 {
     "_id": "669e526fa9ed3824e6db2db9",
-    "fullName": "Darlene Hills",
+    "fullName": "Curtis Jackson",
     "userGroup": "superuser",
-    "email": "RafaelBergnaum@yahoo.com",
+    "email": "Nyasia.Kreiger@gmail.com",
     "password": "$2b$10$NkE10T4T8zCVvIawiFHkb.MRV19Nstb9do.aD58pGAaq.um1aPa4i",
-    "__v": 0
+    "__v": 1
 }
 ```
