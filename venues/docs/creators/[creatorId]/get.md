@@ -1,15 +1,15 @@
-## GET `/events/hosts/:hostId`
+## GET `/venues/creators/:creatorId`
 
-This endpoint allows the client to retrieve a list of events created by a specific event host. 
+This endpoint allows the client to retrieve a list of venues created by a specific venue host. 
 
 The response returns a paginated list by default. The default pagination limit is 10. You can change this value using query parameters.
 
 
 ## Authorization
-All users, including anonymous users, can view event listed by specific host. Authentication is therefore not required for this endpoint.
+All users, including anonymous users, can view venues listed by specific host. Authentication is therefore not required for this endpoint.
 
 ### Request
-You can send a request to view list of events with the desired pagination constraints. If the request does not include client defined pagination constraints, the system will use it's default pagination constraints to process the request. Pagination constraints can be defined using the following query parameters:
+You can send a request to view list of venues with the desired pagination constraints.  Pagination constraints can be defined using the following query parameters:
 
 - `page`: number
 - `limit`: number
@@ -17,57 +17,23 @@ You can send a request to view list of events with the desired pagination constr
 Pagination constraints can be included in the url as shown in the following URL
 
 ```t
-/events/hosts/<hostId>?page=2&&limit=21
+/venues/creators/<creatorId>?page=2&&limit=21
 ```
 
-#### Example
+If the request does not include client defined pagination constraints, the system will use it's default pagination constraints to process the request.
+
+**Example**
 
 ```javascript
 (asyn() =>{
 
-    const response = await fetch('<BASE_URL>/events/hosts/<hostId>?page=2&&limit=21', {
-        method: 'GET',
-    })
+    const response = await fetch('<BASE_URL>/venues/creators/<creatorId>?page=2&&limit=21', { method: 'GET' })
 
     const body = await response.json()
 
-    console.log('events: ', body)
+    console.log('venues: ', body)
 })()
  ```
 
 ### Response
-A success response from this endpoint has a status code of 200. The list of events is contained in the response body as a JSON payload. Each object in the events array contains the following event details:
-
-```javascript
-  {
-    _id: string
-    type: string
-    name: string
-    capacity: number
-    host: ObjectId
-    address: {
-        cityOrTown: string
-        street: string
-        block: {
-            name: string,
-            floor: number
-        }
-    }
-    pictures?: {
-        name: string
-        data: Buffer
-        contentType: string
-    }[]
-    description: string
-    accessibilityFeatures: {
-        stairCase: boolean,
-        elevator: boolean,
-        escallator: boolean,
-        ramp: boolean
-    }
-    coordinates: {
-        latitude: number
-        longitude: number
-    }
-}
-```
+A success response from this endpoint has a status code of `200`. The list of venues is contained in the response body as a JSON payload. The following is an example of data returned in the response body:
