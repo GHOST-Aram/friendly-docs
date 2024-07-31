@@ -1,15 +1,13 @@
 ## GET `/event-categories`
 
-This endpoint allows the clients to retrieve a list of Event Categories. 
-
-The response returns a paginated list by default. The default pagination limit is 10. You can change this value using query parameters.
+This endpoint allows the clients to retrieve a list of Event Categories. The response returns a paginated list by default. The default pagination limit is 10. You can change this value using query parameters.
 
 
 ## Authorization
 All users, including anonymous users, can view event listings. Authentication is therefore not required for this endpoint.
 
 ### Request
-You can send a request to view list of Event Categories with customized pagination constraints. If the request does not include client defined pagination constraints, the system will use it's default pagination constraints to process the request. Pagination constraints can be defined using the following query parameters:
+You can send a request to view list of event categories with customized pagination constraints. Pagination constraints can be defined using the following query parameters:
 
 - `page`: number
 - `limit`: number
@@ -20,7 +18,9 @@ Pagination constraints can be included in the url as shown in the following URL
 '/event-categories?page=2&&limit=21'
 ```
 
-#### Example
+If the request does not include client defined pagination constraints, the system will use it's default pagination constraints to process the request.
+
+**Example**
 
 ```javascript
 (asyn() =>{
@@ -36,16 +36,8 @@ Pagination constraints can be included in the url as shown in the following URL
  ```
 
 ### Response
-A successfull response from this endpoint has a status code of `200`. The list of Event Categories is contained in the response body as a JSON payload. Each object in the Event Categories array contains the following event details:
+A successfull response from this endpoint has a status code of `200`. The response body contains the list of event categories as a JSON payload. The following is an example of the JSON payload contained in the response body:
 
-```javascript
-    _id: string
-    name: string
-    description: string
-    createdBy?: ObjectId
-    graphic?: {
-        name: string,
-        data: string
-        contentType: string
-    }
+```json
+
 ```
