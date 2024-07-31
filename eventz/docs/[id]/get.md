@@ -29,7 +29,33 @@ Provide the event id as a url parameter in the url as shown below to fetch the d
 A successful response sent from this endpoint has a status code of `200`. The response body contains the event details as a JSON payload. The following is an example of the JSON payload contained in the response body:
 
 ```json
-
+    {
+        "category": "Music",
+        "venue": "Madison Square Garden",
+        "title": "Rock Concert",
+        "createdBy": "66aa441b6e3b90141006547c",
+        "graphic": {
+            "name": "1722444814279_20240318_165856.jpg",
+            "data": "/9j/4dbgRXhpZgAASUkq...",
+            "contentType": "image/jpeg"
+        },
+        "city": "Nairobi",
+        "date": "8 August 2024",
+        "time": {
+            "start": "01:00 PM",
+            "end": "09:00 PM",
+            "zone": "GMT+03:00"
+        },
+        "duration": "8 hours",
+        "ageLimit": {
+            "min": 18,
+            "max": 60
+        },
+        "availableTickets": 5000,
+        "ticketPrice": 5900,
+        "_id": "66aa6c0e1001f0abc83679d3",
+        "__v": 0
+    }
 ```
 
 If the event document with the provided Id is not found, a response with status code `404` is sent.
