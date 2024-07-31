@@ -36,12 +36,11 @@ A successful response sent from this endpoint has a status code of `200`. The us
 
 ```json
 {
-    "_id": "65e40da5c390b114451cebb5",
-    "fullName": "Curtis Jackson",
-    "userGroup": "superuser",
-    "email": "Nyasia.Kreiger@gmail.com",
-    "password": "$2b$10$NkE10T4T8zCVvIawiFHkb.MRV19Nstb9do.aD58pGAaq.um1aPa4i",
-    "__v": 1
+    "_id": "66aa43ae6e3b901410065479",
+    "fullName": "Darlene Hills",
+    "userGroup": "host",
+    "email": "host_Bergnaum5@gmail.com",
+    "__v": 0
 }
 ```
 If the document to be fetched is not, a response with status code of `404` is sent.
