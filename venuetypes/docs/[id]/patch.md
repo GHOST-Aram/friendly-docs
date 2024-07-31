@@ -1,16 +1,14 @@
 ## PUT `/venue-types`
 
-This endpoint allows system admins and venue hosts (managers/owners/landlords) to modify venue types.
+This endpoint allows system admins and venue hosts (venue managers/owners/landlords) to modify venue types. Venue hosts and system admins are users of the `host` and `superuser` groups respectively. 
 
 ### Authorization
-Only authenticated venue hosts and system admins can modify venue types. Venue hosts and system admins are users of the `host` and `superuser` groups respectively. 
-
-Admins or hosts can only modify documents they created. If an admin tries to modify a document created by another admin or any venue host, the server will deny the request and respond with status code `403` (Fobbiden). Same goes for venue hosts.
+Only authenticated venue hosts and system admins can modify venue types. Admins or hosts can only modify documents they created. If an admin tries to modify a document created by another admin or any venue host, the server will deny the request and respond with status code `403` (Fobbiden). Same goes for venue hosts.
 
 Visit the [authentication docs](../authentication/authentication.md) to acquire authentication token. Provide the token in the request `Authorization` header as `Bearer`.
 
 ### Request
-To modify an venue types via PUT method, provide the following venue details in the request:
+To modify an venue types via PATCH method, provide any or all of the following venue details in the request:
 
 ```typescript
    {
@@ -19,13 +17,8 @@ To modify an venue types via PUT method, provide the following venue details in 
     }
 ```
 
-The description should be a string of not less than 100 characters and not more than 1000 characters in length.
-
-
-### Response
-
-A successful response from this endpoint has the status code of `200`. The response body contains modified venue type document. The URL to the modified item is in the `Location` header of the response object in the format `/venue-types/<venueType._id`>. If the document to be modified does not exist, a response with status code of `404` is sent.
-
+**Notes**
+- The description should be a string of not less than 100 characters and not more than 1000 characters in length.
 
 **Example:**
 
@@ -58,3 +51,14 @@ A successful response from this endpoint has the status code of `200`. The respo
     console.log('venue type: ', body)
 })()
 ```
+
+
+### Response
+
+A successful response from this endpoint has the status code of `200`. The URL to the modified item is in the `Location` header of the response object in the format `/venue-types/<venueType._id`>. The response body contains modified venue type document. The following is an example of the JSON payload contained in the response body:
+
+```json
+
+```
+
+If the document to be modified is not found, a response with status code of `404` is sent.
