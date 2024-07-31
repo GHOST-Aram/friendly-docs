@@ -85,11 +85,9 @@ A successful response from this endpoint has the status code of `201`. The URL o
 
 ```json
 {
-    "_id": "669e526fa9ed3824e6db2db9",
     "fullName": "Darlene Hills",
     "userGroup": "superuser",
-    "email": "RafaelBergnaum@yahoo.com",
-    "password": "$2b$10$NkE10T4T8zCVvIawiFHkb.MRV19Nstb9do.aD58pGAaq.um1aPa4i",
-    "__v": 0
+    "email": "Jaqueline90@yahoo.com",
+    "_id": "66aa4bedec6f618a02667e38"
 }
 ```
