@@ -1,15 +1,15 @@
 ## GET `venues/:id`
 
-This endpoint allows you to retrieve venue details using a specified venue ID.
+This endpoint allows you to retrieve the details of a venue using a specified venue ID.
 
 ### Authorization
 All users, including anonymous users, can view venue details. Authentication is therefore not required for this endpoint.
 
 ### Request
-To get the details of a venue with a specific id, provide the id as a url parameter in the request url as shown below:
+Provide the id of the event document to be fetched as a url parameter in the url as shown below:
 
 ```javascript
-/venues/<venueId>
+'/venues/<venueId>'
 ```
 
 **Example**
