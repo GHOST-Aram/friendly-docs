@@ -84,7 +84,28 @@ A successful response from this endpoint has the status code of `200`. The URL o
 The following is an example of the JSON payload contained in the response body:
 
 ```json
+// Without image file
+{
+    "_id": "66ab96e41b17e9888286df55",
+    "name": "Music COncerts",
+    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores libero illo praesentium autem nesciunt consectetur repudiandae omnis eum similique in, quas rerum. Eveniet, possimus doloremque?",
+    "createdBy": "66aa441b6e3b90141006547c",
+    "__v": 0
+}
 
+//With image file
+{
+    "graphic": {
+        "name": "1722524090671_drag-drop.png",
+        "data": "iVBORw0KGgoAAAANSUhEUgAAAl...",
+        "contentType": "image/png"
+    },
+    "_id": "66ab96e41b17e9888286df55",
+    "name": "Koroga Festival",
+    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores libero illo praesentium autem nesciunt consectetur repudiandae omnis eum similique in, quas rerum. Eveniet, possimus doloremque?",
+    "createdBy": "66aa441b6e3b90141006547c",
+    "__v": 0
+}
 ```
 
 If the document to be updated does not exist, a new document is created and a response with status code of `201` is returned.
