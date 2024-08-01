@@ -41,5 +41,20 @@ If the request does not include client defined pagination constraints, the syste
 A success response from this endpoint has a status code of `200`. The list of venues is contained in the response body as a JSON payload. The following is an example of the JSON payload contained in the response body:
 
 ```json
-
+[
+    {
+        "_id": "66ab81ff64f0899f1d8a3980",
+        "name": "Sports Center&#x2F;Stadium",
+        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores libero illo praesentium autem nesciunt consectetur repudiandae omnis eum similique in, quas rerum. Eveniet, possimus doloremque?",
+        "createdBy": "66aa43ae6e3b901410065479",
+        "__v": 0
+    },
+    {
+        "_id": "66ab829b64f0899f1d8a3983",
+        "name": "Sports Center&#x2F;Stadium",
+        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores libero illo praesentium autem nesciunt consectetur repudiandae omnis eum similique in, quas rerum. Eveniet, possimus doloremque?",
+        "createdBy": "66aa43ae6e3b901410065479",
+        "__v": 0
+    }
+]
 ```
