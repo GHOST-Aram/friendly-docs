@@ -30,7 +30,18 @@ Provide the id of the target event category as a url parameter as shown below to
 A successful response sent from this endpoint has a status code of `200`. The details are contained in the response body as a JSON payload. The following is an example of the JSON payload contained in the response body:
 
 ```json
-
+{
+    "graphic": {
+        "name": "1722521452423_drag-drop.png",
+        "data": "iVBORw0KGgoAAAANSUhEUgAAAl0AAAE0CA...",
+            "contentType": "image/png"
+    },
+    "_id": "66ab976c1b17e9888286df57",
+    "name": "Lorem ipsum suudus",
+    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores libero illo praesentium autem nesciunt consectetur repudiandae omnis eum similique in, quas rerum. Eveniet, possimus doloremque?",
+    "createdBy": "66aa441b6e3b90141006547c",
+    "__v": 0
+}
 ```
 
 If the document with the provided Id is not found, a response with status code of `404` is returned.
