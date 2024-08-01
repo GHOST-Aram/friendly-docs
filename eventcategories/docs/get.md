@@ -39,5 +39,25 @@ If the request does not include client defined pagination constraints, the syste
 A successfull response from this endpoint has a status code of `200`. The response body contains the list of event categories as a JSON payload. The following is an example of the JSON payload contained in the response body:
 
 ```json
-
+[
+    {
+        "_id": "66ab96e41b17e9888286df55",
+        "name": "Lorem Ipsum Sudus",
+        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores libero illo praesentium autem nesciunt consectetur repudiandae omnis eum similique in, quas rerum. Eveniet, possimus doloremque?",
+        "createdBy": "66aa441b6e3b90141006547c",
+        "__v": 0
+    },
+    {
+        "graphic": {
+            "name": "1722521452423_drag-drop.png",
+            "data": "iVBORw0KGgoAAAANSUhEUgAAAl0AAAE0CA...",
+               "contentType": "image/png"
+        },
+        "_id": "66ab976c1b17e9888286df57",
+        "name": "Lorem ipsum suudus",
+        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores libero illo praesentium autem nesciunt consectetur repudiandae omnis eum similique in, quas rerum. Eveniet, possimus doloremque?",
+        "createdBy": "66aa441b6e3b90141006547c",
+        "__v": 0
+    }
+]
 ```
