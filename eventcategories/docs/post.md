@@ -81,4 +81,27 @@ A successful response from this endpoint has the status code of `201`. The URL o
 
 ```json
 
+//Without image file
+{
+    "name": "Lorem Ipsum Sudus",
+    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores libero illo praesentium autem nesciunt consectetur repudiandae omnis eum similique in, quas rerum. Eveniet, possimus doloremque?",
+    "createdBy": "66aa441b6e3b90141006547c",
+    "_id": "66ab96e41b17e9888286df55",
+    "__v": 0
+}
+
+// with image file
+{
+    "name": "Lorem ipsum suudus",
+    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores libero illo praesentium autem nesciunt consectetur repudiandae omnis eum similique in, quas rerum. Eveniet, possimus doloremque?",
+    "createdBy": "66aa441b6e3b90141006547c",
+    "graphic": {
+        "name": "1722521575941_drag-drop.png",
+        "data": "iVBORw0KGgoAAAANSUhEUgAAAl...",
+        "contentType": "image/png"
+    },
+    "_id": "66ab97e737b67acd3c2a4cdf",
+    "__v": 0
+}
+
 ```
