@@ -38,7 +38,7 @@ To delete the details of a venue type, provide the id of the venue as a url para
 A valid response of a request to this endpoint has a status code `200`. The response body contains the id of the deleted venue type. The following is an example of the JSON payload contained in the response body.
 
 ```json
-
+    "66ab81ff64f0899f1d8a3980"
 ```
 
 If the target document to be deleted is not found, a response of status code `404` is sent.
