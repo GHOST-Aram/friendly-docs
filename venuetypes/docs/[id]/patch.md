@@ -5,7 +5,7 @@ This endpoint allows system admins and venue hosts (venue managers/owners/landlo
 ### Authorization
 Only authenticated venue hosts and system admins can modify venue types. Admins or hosts can only modify documents they created. If an admin tries to modify a document created by another admin or any venue host, the server will deny the request and respond with status code `403` (Fobbiden). Same goes for venue hosts.
 
-Visit the [authentication docs](../authentication/authentication.md) to acquire authentication token. Provide the token in the request `Authorization` header as `Bearer`.
+Visit the [authentication docs](../../../authentication/authentication.md) to acquire authentication token. Provide the token in the request `Authorization` header as `Bearer`.
 
 ### Request
 To modify an venue types via PATCH method, provide any or all of the following venue details in the request:

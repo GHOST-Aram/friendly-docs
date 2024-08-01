@@ -6,7 +6,7 @@ This endpoint allows the client to remove a specific user with the provided ID.
 ### Authorization
 Only authenticated users can delete user documents. Users can only delete their own details and not details of other users. If a user tries to update a document owned by another user, a `Forbidden` response with status code `403` will be received. 
 
-Visit [Authentication documentation](../../authentication/auth.md) to learn how to get an authentication token.
+Visit [Authentication documentation](../../../authentication/authentication.md) to learn how to get an authentication token.
 
 
 ### Request

@@ -5,7 +5,7 @@ This endpoint allows event organizers and system admins to update the details of
 ### Authorization
 Only authenticated event organizers or system admins can update an Event Category. Admins or event organizers can only update documents they created. If an admin tries to update a document created by another admin or another event organizer, the server will deny the request and respond with status code `403` (Fobbiden). Same goes for event organizers.
 
-Visit the [authentication docs](../authentication/authentication.md) to acquire authentication token. Provide the token in the request `Authorization` header as `Bearer`.
+Visit the [authentication docs](../../../authentication/authentication.md) to acquire authentication token. Provide the token in the request `Authorization` header as `Bearer`.
 
 ### Request
 To update a new event category, provide the following event details in the request body:

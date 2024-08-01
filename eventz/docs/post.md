@@ -3,7 +3,7 @@
 This endpoint allows event organizers to create a new event document. Event organizers are users of the `organizer` user group.
 
 ### Authorization
-Only authenticated event organizers can create events. Visit the [authentication docs](../authentication/authentication.md) to acquire authentication token. 
+Only authenticated event organizers can create events. Visit the [authentication docs](../../authentication/authentication.md) to acquire authentication token. 
 
 ### Request
 To create a new event, provide the following event details in the request body:

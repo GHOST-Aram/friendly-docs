@@ -5,7 +5,7 @@ This allows the client to remove a specific event with the provided ID. Only eve
 ### Authorization
 Authentication is needed to access this endpoint. Event documents can only be deleted by the event organizers that own (created) them. If one event organizer tries to delete an event document created by another event organizer, a `Forbidden` response with status `403` will be sent.
 
-Visit [Authentication documentation](../../authentication/auth.md) to learn how to get an authentication token.
+Visit [Authentication documentation](../../../authentication/authentication.md) to learn how to get an authentication token.
 
 ### Request
 Provide the id of the event document to be deleted as a url parameter as shown below:
