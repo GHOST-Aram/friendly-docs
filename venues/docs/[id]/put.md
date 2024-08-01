@@ -134,7 +134,7 @@ Provide the token in the request `Authorization` header as `Bearer`.
 
 ### Response
 
-A successful response from this endpoint has the status code of `200`. If the document to be updated does not exist, a new document is created and a response with status code of `201` is sent. The URL of the created item is in the `Location` header of the response object in the format `/venues/<venue._id`>. The response body contains updated venue document. The following is an example of the JSON payload contained in the response body.
+A successful response from this endpoint has the status code of `200`. The URL of the created item is in the `Location` header of the response object in the format `/venues/<venue._id`>. The response body contains updated venue document. The following is an example of the JSON payload contained in the response body.
 
 ```json
 {
@@ -178,3 +178,5 @@ A successful response from this endpoint has the status code of `200`. If the do
     "__v": 0
 }
 ```
+
+If the document to be updated does not exist, a new document is created and a response with status code of `201` is sent.
