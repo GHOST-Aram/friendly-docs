@@ -57,7 +57,13 @@ To update an venue types via PUT method, provide the following venue details in 
 A successful response from this endpoint has the status code of `200`. The URL of the updated or created item is in the `Location` header of the response object in the format `/venue-types/<venueType._id`>. The response body contains updated venue type document. The following is an example of the JSON payload contained in the response body.
 
 ```json
-
+{
+    "_id": "66ab81ff64f0899f1d8a3980",
+    "name": "Olympics Stadium",
+    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores libero illo praesentium autem nesciunt consectetur repudiandae omnis eum similique in, quas rerum. Eveniet, possimus doloremque?",
+    "createdBy": "66aa43ae6e3b901410065479",
+    "__v": 0
+}
 ```
 
 If the document to be updated does not exist, a new document is created and a response with status code of `201` is sent.
