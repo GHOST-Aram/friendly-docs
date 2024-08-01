@@ -3,7 +3,7 @@
 This endpoint allows admins and venue hosts (managers/owners/landlords) to create categories under which venues can be grouped. Venue hosts and system admins are users of the `host` and `superuser` user groups respectively.
 
 ### Authorization
-Only authenticated venue hosts and system admins can create venue types. Visit the [authentication docs](../authentication/authentication.md) to acquire an authentication token. Provide the token in the request `Authorization` header as `Bearer`.
+Only authenticated venue hosts and system admins can create venue types. Visit the [authentication docs](../../authentication/authentication.md) to acquire an authentication token. Provide the token in the request `Authorization` header as `Bearer`.
 
 ### Request
 The venue types POST request handler expects data of the following shape in the request body:

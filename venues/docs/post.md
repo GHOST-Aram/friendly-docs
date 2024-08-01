@@ -3,7 +3,7 @@
 This endpoint allows venue hosts (venue managers/owners/landlords) to create a new venue. Venue hosts are users of the `host` user group
 
 ### Authorization
-Only authenticated venue hosts can create venues. Visit the [authentication docs](../authentication/authentication.md) to acquire authentication token. Provide the token in the request `Authorization` header as `Bearer`.
+Only authenticated venue hosts can create venues. Visit the [authentication docs](../../authentication/authentication.md) to acquire authentication token. Provide the token in the request `Authorization` header as `Bearer`.
 
 ### Request
 To create a new venue, provide the following venue details in the request body:

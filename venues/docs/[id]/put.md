@@ -5,7 +5,7 @@ This endpoint allows venue hosts ( venue managers/owners/landlords) to update ve
 ### Authorization
 Only authenticated venue hosts can update venues. A venue host can only update a document they own. If a venue host tries to update a document owned (was created) by another venue host, a `Forbidden 403` response will be received.
 
-Visit the [authentication docs](../authentication/authentication.md) to acquire authentication token.
+Visit the [authentication docs](../../../authentication/authentication.md) to acquire authentication token.
 
 ### Request
 provide the all of following venue details in the request body:

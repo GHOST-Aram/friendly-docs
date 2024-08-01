@@ -5,7 +5,7 @@ This endpoint allows system admins and venue hosts ( VENUE managers/owners/landl
 ### Authorization
 Only authenticated venue hosts and system admins can update venue types.  Admins or hosts can only update documents they created. If an admin tries to update a document created by another admin or another venue host, the server will deny the request and respond with status code `403` (Fobbiden). Same goes for venue hosts.
 
-Visit the [authentication docs](../authentication/authentication.md) to acquire an authentication token. Provide the token in the request `Authorization` header as `Bearer`.
+Visit the [authentication docs](../../../authentication/authentication.md) to acquire an authentication token. Provide the token in the request `Authorization` header as `Bearer`.
 
 ### Request
 To update an venue types via PUT method, provide the following venue details in the request:
