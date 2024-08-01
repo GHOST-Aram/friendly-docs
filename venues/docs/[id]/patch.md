@@ -137,7 +137,46 @@ Provide the token in the request `Authorization` header as `Bearer`.
 A successful response from this endpoint has the status code of `200`. The URL of the created item is in the `Location` header of the response object in the format `/venues/<venue._id`>. The response body contains updated venue document. The following is an example of a JSON payload returned in the response body.
 
 ```json
-
+{
+    "bookingTerms": {
+        "fee": 500000,
+        "timeSpan": "day"
+    },
+    "address": {
+        "block": {
+            "name": "Paradise Hotle MSA",
+            "floor": 12
+        },
+        "cityOrTown": "Mombasa",
+        "street": "Ngina Drive"
+    },
+    "accessibilityFeatures": {
+        "stairCase": true,
+        "elevator": true,
+        "escallator": false,
+        "ramp": true
+    },
+    "coordinates": {
+        "latitude": -36.3,
+        "longitude": -12.5
+    },
+    "_id": "66aa9be5e641b3d6e3c020d3",
+    "type": "5 start Hotel",
+    "name": "Paradise Hotel Mombasa",
+    "capacity": 20000,
+    "availabilityStatus": "available",
+    "createdBy": "66aa43ae6e3b901410065479",
+    "pictures": [
+        {
+            "name": "1722457061307_file-upload.png",
+            "data": "iVBORw0KGgoAAAANSUhEUgAAAgAAAAH7CAYAAAC6x...",
+            "contentType": "image/png",
+            "_id": "66aa9be5e641b3d6e3c020d6"
+        }
+    ],
+    "description": "Lorem ipsum dolor sit, amet consectetu adipisicing elit. Maiores libero illo praesentium autem nesciunt consectetur repudiandae omnis eum similique in, quas rerum. Eveniet, possimus doloremque?",
+    "__v": 0
+}
 ```
 
 If the document to be updated does not exist, a response with status code of `404` is sent.
