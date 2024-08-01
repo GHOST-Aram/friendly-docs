@@ -58,7 +58,13 @@ To modify an venue types via PATCH method, provide any or all of the following v
 A successful response from this endpoint has the status code of `200`. The URL to the modified item is in the `Location` header of the response object in the format `/venue-types/<venueType._id`>. The response body contains modified venue type document. The following is an example of the JSON payload contained in the response body:
 
 ```json
-
+{
+    "_id": "66ab81ff64f0899f1d8a3980",
+    "name": "Stadium",
+    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores libero illo praesentium autem nesciunt consectetur repudiandae omnis eum similique in, quas rerum. Eveniet, possimus doloremque?",
+    "createdBy": "66aa43ae6e3b901410065479",
+    "__v": 0
+}
 ```
 
 If the document to be modified is not found, a response with status code of `404` is sent.
