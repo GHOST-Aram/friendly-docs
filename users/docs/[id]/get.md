@@ -8,7 +8,7 @@ User details can only be read by an authenticated user. An authenticated user ca
 Visit the [authentication documentation](../../authentication/authentication.md) to learn how to get an authorization token.
 
 ### Request
-Provide the target user id as a url parameter in the request url as shown below to fetch the details:
+Provide the target user ID as a URL parameter in the request URL as shown below to fetch the details:
 
 ```javascript
 /users/<userId>
@@ -19,28 +19,28 @@ Provide the *authentication token* in the `Authorization` header of the request 
 **Example**
 ```javascript
 (async() =>{
-    const response =  await fetch('<BASE_URL>/users/65e40da5c390b114451cebb5',{
-        method: 'GET',
-        headers:{
-            'Authorization': 'Bearer <Authorization token>'
-        }
-    })
+    const response =  await fetch('<BASE_URL>/users/65e40da5c390b114451cebb5',{
+        method: 'GET',
+        headers:{
+            'Authorization': 'Bearer <Authorization token>'
+ }
+ })
 
-    const body = await response.json()
-    console.log(body)
+    const body = await response.json()
+    console.log(body)
 })()
 ```
 
 ### Response
-A successful response sent from this endpoint has a status code of `200`. The user details are contaied in the response body as a json payload. The following is an example of a user object contained in the response body as a JSON payload.
+A successful response from this endpoint has a status code of `200`. The user details are contained in the response body as a json payload. The following is an example of a user object contained in the response body as a JSON payload.
 
 ```json
 {
-    "_id": "66aa43ae6e3b901410065479",
-    "fullName": "Darlene Hills",
-    "userGroup": "host",
-    "email": "host_Bergnaum5@gmail.com",
-    "__v": 0
+    "_id": "66aa43ae6e3b901410065479",
+    "fullName": "Darlene Hills",
+    "userGroup": "host",
+    "email": "host_Bergnaum5@gmail.com",
+    "__v": 0
 }
 ```
-If the document to be fetched is not, a response with status code of `404` is sent.
+If the document to be fetched is not, a response with a status code of `404` is sent.

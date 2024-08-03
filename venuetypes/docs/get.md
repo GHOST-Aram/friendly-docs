@@ -14,47 +14,47 @@ You can send a request to fetch a list of venue types with the desired paginatio
 - `page`: number
 - `limit`: number
 
-Pagination constraints can be included in the url as shown in the following URL
+Pagination constraints can be included in the URL as shown in the following URL
 
 ```t
 /venue-types?page=2&&limit=21
 ```
 
-If the request does not include client defined pagination constraints, the system will use it's default pagination constraints to process the request.
+If the request does not include client-defined pagination constraints, the system will use its default pagination constraints to process the request.
 
 **Example**
 
 ```javascript
-(asyn() =>{
+(async() =>{
 
-    const response = await fetch('<BASE_URL>/venue-types?page=2&&limit=21', {
-        method: 'GET',
-    })
+    const response = await fetch('<BASE_URL>/venue-types?page=2&&limit=21', {
+        method: 'GET',
+ })
 
-    const body = await response.json()
+    const body = await response.json()
 
-    console.log('venues types: ', body)
+    console.log('venues types: ', body)
 })()
  ```
 
 ### Response
-A success response from this endpoint has a status code of `200`. The list of venues is contained in the response body as a JSON payload. The following is an example of the JSON payload contained in the response body:
+A successful response from this endpoint has a status code of `200`. The list of venues is contained in the response body as a JSON payload. The following is an example of the JSON payload contained in the response body:
 
 ```json
 [
-    {
-        "_id": "66ab81ff64f0899f1d8a3980",
-        "name": "Sports Center&#x2F;Stadium",
-        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores libero illo praesentium autem nesciunt consectetur repudiandae omnis eum similique in, quas rerum. Eveniet, possimus doloremque?",
-        "createdBy": "66aa43ae6e3b901410065479",
-        "__v": 0
-    },
-    {
-        "_id": "66ab829b64f0899f1d8a3983",
-        "name": "Sports Center&#x2F;Stadium",
-        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores libero illo praesentium autem nesciunt consectetur repudiandae omnis eum similique in, quas rerum. Eveniet, possimus doloremque?",
-        "createdBy": "66aa43ae6e3b901410065479",
-        "__v": 0
-    }
+ {
+        "_id": "66ab81ff64f0899f1d8a3980",
+        "name": "Sports Center or Stadium",
+        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores libero illo praesentium autem nesciunt consectetur repudiandae omnis eum similique in, quas rerum. Eveniet, possimus doloremque?",
+        "createdBy": "66aa43ae6e3b901410065479",
+        "__v": 0
+ },
+ {
+        "_id": "66ab829b64f0899f1d8a3983",
+        "name": "Sports Center or Stadium",
+        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores libero illo praesentium autem nesciunt consectetur repudiandae omnis eum similique in, quas rerum. Eveniet, possimus doloremque?",
+        "createdBy": "66aa43ae6e3b901410065479",
+        "__v": 0
+ }
 ]
 ```

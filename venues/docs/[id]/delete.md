@@ -9,7 +9,7 @@ Visit [Authentication documentation](../../../authentication/authentication.md) 
 
 
 ### Request
-Provide the id of the venue document to be deleted as a url parameter an shown below:
+Provide the ID of the venue document to be deleted as a URL parameter an shown below:
 
 ```javascript
 '/venues/<venueId>'
@@ -21,27 +21,27 @@ Provide the token in the `Authorization` header as Bearer.
 
 ```javascript
 (async() =>{
-    const myHeaders = new Headers();
-    myHeaders.append("Authorization", "Bearer <token>");
+    const myHeaders = new Headers();
+    myHeaders.append("Authorization", "Bearer <token>");
 
-    const requestOptions = {
-        method: "DELETE",
-        headers: myHeaders,
-    };
+    const requestOptions = {
+        method: "DELETE",
+        headers: myHeaders,
+ };
 
-    const response = await fetch("<BASE_URL>/venues/65e449f3a72eaa435166c76c", requestOptions)
-    
-    const body = await response.json()
-    console.log('Deleted id: ', body)
+    const response = await fetch("<BASE_URL>/venues/65e449f3a72eaa435166c76c", requestOptions)
+    
+    const body = await response.json()
+    console.log('Deleted id: ', body)
 })()
 ```
 
 
 ### Response
-A valid response of a request to this endpoint has a status code `200`. The response body contains the id of the deleted venue. The following is an example of the JSON payload contained in the request body.
+A valid response of a request to this endpoint has a status code `200`. The response body contains the ID of the deleted venue. The following is an example of the JSON payload in the request body.
 
 ```json
 "65e449f3a72eaa435166c76c"
 ```
 
-If the event document to be deleted is not found, a response of status code `404` is returned. 
+If the event document to delete is not found, a response with the status code `404` is returned. 

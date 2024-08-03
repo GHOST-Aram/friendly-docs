@@ -1,9 +1,9 @@
 # Venues 
-Welcome to venues documentation. This document provides links to the documentations on all the CRUD operations on venues.
- 
-Each documentation linked below provides detailed information about the request, response, and any additional parameters necessary for interacting with the venues endpoint.
+Welcome to venue documentation. This document provides links to the documentation on all the CRUD operations on venues.
+ 
+Each documentation linked below provides detailed information about the request, response, and any additional parameters necessary for interacting with the venue's endpoint.
 
-Please select the operation you are interested in to proceed with the documentation
+Please select the operation you are interested in to proceed to its documentation.
 
 ## POST venue
 Create a new venue.
@@ -14,11 +14,11 @@ Retrieve paginated lists of venues in the system.
 - [Visit the documentation](./docs/get.md)
 
 ## GET One venue
-Retrieve information about a specific venue by id.
+Retrieve information about a specific venue by ID.
 - [Visit the documentation](./docs/[id]/get.md)
 
 ## GET Multiple venues by `creatorId`
-Retrieve information about a venues listed by a specific host.
+Retrieve information about venues listed by a specific host.
 - [Visit the documentation](./docs/creators/[creatorId]/get.md)
 
 ## PUT venue
@@ -26,14 +26,9 @@ Update venue information.
 - [Visit the documentation](./docs/[id]/put.md)
 
 ## PATCH venue
-Apply partial modifications on a venue by id.
+Apply partial modifications on a venue by ID.
 - - [Visit the documentation](./docs/[id]/patch.md)
 
 ## DELETE venue
 Remove a venue by ID.
 - [Visit the documentation](./docs/[id]/delete.md)
-
-
-
-
-

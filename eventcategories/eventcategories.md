@@ -1,9 +1,9 @@
 # Event Categories 
-Welcome to event categories documentation. This document provides links to the documentations on all the CRUD operations on the Event Categories app.
- 
+Welcome to event categories documentation. This document provides links to the documentation on all the CRUD operations on the Event Categories app.
+ 
 Each documentation linked below provides detailed information about the request, response, and any additional parameters necessary for interacting with the Event Categories endpoints.
 
-Please select the operation you are interested in to proceed with the documentation
+Please select the operation you are interested in to proceed to its documentation
 
 ## POST Event Category
 Create a new Event Category.
@@ -26,7 +26,7 @@ Update Event Category.
 - [Visit the documentation](./docs/[id]/put.md)
 
 ## PATCH Event Categories
-Apply partial modifications on an Event Category.
+Apply partial modifications to an Event Category.
 - [Visit the documentation](./docs/[id]/patch.md)
 
 ## DELETE event categories
