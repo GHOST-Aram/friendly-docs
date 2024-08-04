@@ -20,6 +20,14 @@ Pagination constraints can be included in the URL as shown in the following URL
 
 If the request does not include client-defined pagination constraints, the system will use its default pagination constraints to process the request.
 
+You can also further refine your search by using URL query parameters. The following is a list of parameters that you can include in the query string:
+
+- `category`, 
+- `venue`, 
+- `title`, 
+- `createdBy`- The Id of the user who posted the event, 
+- `city`
+
 **Example**
 
 ```javascript
