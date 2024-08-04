@@ -20,6 +20,12 @@ Pagination constraints can be included in the URL as shown in the following URL
 
 If the request does not include client-defined pagination constraints, the system will use its default pagination constraints to process the request.
 
+You can also refine your request using query params. For example
+
+```javascript
+`{{baseUrl}}/event-categories?createdBy=66aa441b6e3b90141006547c&name=Lorem ipsum suudus&limit=1`
+```
+
 **Example**
 
 ```javascript
