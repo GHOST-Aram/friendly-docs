@@ -17,10 +17,6 @@ Retrieve paginated lists of Event Categories in the system.
 Retrieve a specific Event Category by id.
 - [Visit the documentation](./docs/[id]/get.md)
 
-## GET Multiple Event Categories by `creatorId`
-Retrieve Event Categories listed by a specific creator (event organizer or system admin).
-- [Visit the documentation](./docs/creators/[creatorId]/get.md)
-
 ## PUT Event Categories
 Update Event Category.
 - [Visit the documentation](./docs/[id]/put.md)
