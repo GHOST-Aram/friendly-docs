@@ -17,10 +17,6 @@ Retrieve paginated lists of events in the system.
 Retrieve information about a specific event by id.
 - [Visit the documentation](./docs/[id]/get.md)
 
-## GET Multiple events by `organizerId`
-Retrieve information about events listed by a specific organizer.
-- [Visit the documentation](./docs/organizers/[organizerId]/get.md)
-
 ## PUT event
 Update event information.
 - [Visit the documentation](./docs/[id]/put.md)
