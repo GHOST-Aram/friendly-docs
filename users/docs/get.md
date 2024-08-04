@@ -20,6 +20,11 @@ Pagination constraints can be included in the URL as shown in the following URL
 
 If the request does not include client-defined constraints, the system will use its default pagination constraints to process the request.
 
+You can also further refine your search by using query parameters. The following is a list of parameters that you can include in the query string:
+
+- `fullName`
+- `userGroup`
+
 **Example**
 
 ```javascript
