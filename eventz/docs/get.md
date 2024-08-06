@@ -70,8 +70,8 @@ A successful response from this endpoint has a status code of `200`. The list of
         "city": "Nairobi",
         "date": "8 August 2024",
         "time": {
-            "start": "01:00 PM",
-            "end": "09:00 PM",
+            "start": "1300",
+            "end": "2100",
             "zone": "GMT+03:00"
  },
         "duration": "8 hours",
