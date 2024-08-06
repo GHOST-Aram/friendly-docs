@@ -27,6 +27,15 @@ You can also further refine your search by using query parameters. The following
 - `title`, 
 - `createdBy`- The Id of the user who posted the event, 
 - `city`
+- `ticketPrice`
+- `availableTickets`
+- `ageLimit.min` 
+- `ageLimit.max` 
+- `time.end` 
+- `time.zone`
+- `time.start`
+
+Notice the dot-notation in the parameter for nested properties. Nested properties can searched using the dot-notation. Using index notation e.g  `ageLimit[min]` will not work as you would expect.
 
 **Example**
 

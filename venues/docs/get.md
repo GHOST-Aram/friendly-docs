@@ -22,6 +22,26 @@ Pagination constraints can be included in the URL as shown in the following URL
 
 If the request does not include client-defined pagination constraints, the system will use its default pagination constraints to process the request.
 
+You can also further refine your search by using query parameters. The following is a list of parameters that you can include in the query string:
+
+- `type` 
+- `name`
+- `createdBy` 
+- `capacity`
+- `availabilityStatus`
+- `address.cityOrTown` 
+- `address.street`
+- `address.block.name` 
+- `address.block.floor`
+- `accessibilityFeatures.stairCase` 
+- `accessibilityFeatures.elevator`
+- `accessibilityFeatures.ramp` 
+- `accessibilityFeatures.escallator`
+- `bookingTerms.fee`
+- `bookingTerms.timeSpan`
+
+Notice the dot-notation in the parameter for nested properties. Nested properties can searched using the dot-notation. Using index notation i.e `address[street]` will not work as you would expect.
+
 #### Example
 
 ```javascript
