@@ -33,10 +33,14 @@ Provide the *authentication token* in the request `Authorization` header as `Bea
 
 **Notes**
 - The event graphic is optional but if provided, must be an image file with the extension *.jpg, .jpeg, .png, .avif, or .jfif*
+
 - The accepted value of the `date` string is in the format *Day MonthName Year*. For example *12 January 2025*.
-- The accepted values of `time.start` and `time.end` strings are in the format *hour:minutes AM or PM*.
+
+- The accepted values of `time.start` and `time.end` strings are in the 24-hour format. A strictly 4-digit stringified number without a semi-colon or a period eg `2200` or `0600`
+
 - The value of `time.end` is optional.
 - The accepted value of the `time.zone` string is in the format *GMT+hours:minutes*. For example *GMT+03:00*.
+
 - The accepted value of the `duration` string is in the format *Number days or hours or minutes*. For example *3 days, 3 hours or 45 minutes*.
 
 **Example:**
@@ -49,8 +53,8 @@ Provide the *authentication token* in the request `Authorization` header as `Bea
         city: "Nairobi",
         date: "23 July 2024",
         time: {
-            start: "12:37 PM",
-            end: "03:37 PM",
+            start: "1237",
+            end: "0337",
             zone: "GMT+03:00"
  },
         duration: "3 days",
@@ -120,8 +124,8 @@ A successful response from this endpoint has the status code of `201`. The URL o
     "city": "New York",
     "date": "8 August 2024",
     "time": {
-        "start": "01:00 PM",
-        "end": "9:00 PM",
+        "start": "2200",
+        "end": "0100",
         "zone": "GMT+03:00"
  },
     "duration": "3 hours",
@@ -148,8 +152,8 @@ A successful response from this endpoint has the status code of `201`. The URL o
     "city": "Nairobi",
     "date": "8 August 2024",
     "time": {
-        "start": "01:00 PM",
-        "end": "09:00 PM",
+        "start": "1300",
+        "end": "2100",
         "zone": "GMT+03:00"
  },
     "duration": "8 hours",
