@@ -35,7 +35,7 @@ You can also further refine your search by using query parameters. The following
 - `time.zone`
 - `time.start`
 
-Notice the dot-notation in the parameter for nested properties. Nested properties can searched using the dot-notation. Using index notation i.e `ageLimit[min]` will not work as you would expect.
+Notice the dot-notation in the parameter for nested properties. Nested properties can searched using the dot-notation. Using index notation e.g  `ageLimit[min]` will not work as you would expect.
 
 **Example**
 
